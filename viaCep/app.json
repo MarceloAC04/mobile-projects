@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "revisaoHooks",
-    "slug": "revisaoHooks",
+    "name": "viaCep",
+    "slug": "viaCep",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,8 +15,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "jsEngine": "jsc"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
@@ -28,14 +27,7 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      [
-        "expo-font",
-        {
-          "fonts": [
-            "node_modules/@expo-google-fonts/poppins"
-          ]
-        }
-      ]
+      "expo-font"
     ]
   }
 }

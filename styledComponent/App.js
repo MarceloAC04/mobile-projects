@@ -2,9 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Container } from './src/components/Container/Container';
+import { Texto, Titulo } from './src/components/Title/Title';
+import { Button, DescrementBtn } from './src/components/Button/Button';
 
 export default function App() {
-  const[count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
   //função de incremento
   const incremento = () => {
@@ -22,34 +24,18 @@ export default function App() {
   return (
     <Container>
 
-      <Text style={styles.title}>Contador: {count}</Text>
+      <Titulo>Contador: {count}</Titulo>
 
-      <TouchableOpacity style={styles.btn} onPress={incremento}>
-        <Text style={styles.text}>Incrementar</Text>
-      </TouchableOpacity>
+      <Button onPress={incremento}>
+        <Texto>Incrementar</Texto>
+      </Button>
 
-      <TouchableOpacity style={styles.btn} onPress={descremento}>
-        <Text style={styles.text}>Decrementar</Text>
-      </TouchableOpacity>
+      <DescrementBtn onPress={descremento}>
+        <Texto>Decrementar</Texto>
+      </DescrementBtn>
 
-      <StatusBar/>
+      <StatusBar />
     </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold'
-  },
-  btn: {
-    backgroundColor: 'green',
-    padding: 10,
-    borderRadius: 5,
-    textAlign: 'center'
-  },
-  text: {
-    color: 'white',
-    fontSize: 16
-  }
-});

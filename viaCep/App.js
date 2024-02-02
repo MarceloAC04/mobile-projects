@@ -25,8 +25,6 @@ export default function App() {
     <Header/>
 
       <Home/>
-
-    {/* <Text>Teste</Text> */}
    </ContainerApp>
   );
 }

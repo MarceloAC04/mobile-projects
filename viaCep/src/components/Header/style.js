@@ -13,7 +13,7 @@ export const HeaderContainer = styled.View`
     justify-content: center;
 
     border-radius: 0px 0px 15px 15px;
-    box-shadow: 0px 0px 15px #000030;
+    box-shadow: 0px 0px 10px #000030;
     /* android */
     /* shadow-color: red;
     shadow-offset: 0px 4px;

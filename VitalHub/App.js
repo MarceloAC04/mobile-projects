@@ -9,13 +9,20 @@ import { Register } from './src/screens/Register/Register';
 //Instancia do stack navigator
 const Stack = createNativeStackNavigator();
 
-import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from '@expo-google-fonts/montserrat-alternates';
+import { useFonts, MontserratAlternates_600SemiBold, 
+  MontserratAlternates_500Medium, 
+  MontserratAlternates_700Bold,
+ } from '@expo-google-fonts/montserrat-alternates';
+
+ import {Quicksand_500Medium } from '@expo-google-fonts/quicksand';
 
 
 export default function App() {
   const [fontsLoaded, fontsError] = useFonts({
     MontserratAlternates_600SemiBold,
-    MontserratAlternates_500Medium
+    MontserratAlternates_500Medium,
+    MontserratAlternates_700Bold,
+    Quicksand_500Medium
   });
 
   if (!fontsLoaded && !fontsError) {

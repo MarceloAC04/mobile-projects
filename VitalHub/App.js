@@ -15,6 +15,8 @@ import { useFonts, MontserratAlternates_600SemiBold,
  } from '@expo-google-fonts/montserrat-alternates';
 
  import {Quicksand_500Medium } from '@expo-google-fonts/quicksand';
+import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
+import { EmailCode } from './src/screens/EmailCode/EmailCode';
 
 
 export default function App() {
@@ -63,6 +65,18 @@ export default function App() {
           name='Register'
           component={Register}
           options={{ title: 'Register' }}
+        />
+
+        <Stack.Screen
+          name='EmailCode'
+          component={EmailCode}
+          options={{ title: 'EmailCode' }}
+        />
+
+        <Stack.Screen
+          name='ResetPassword'
+          component={ResetPassword}
+          options={{ title: 'ResetPassword' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -2,8 +2,10 @@ import { Container, ContainerScrollView } from "../../components/Container/Style
 import { LabelText } from "../../components/LabelText/Styles"
 import { SubTitle } from "../../components/SubTitle/Styles"
 import { Title } from "../../components/Title/Styles"
-import { UserProfileInput, UserProfileInputAddress, UserProfileInputContainer, UserProfileInputContainerRow } from "../../components/UserProfileInput/Styles"
+import { UserProfileInput, UserProfileInputAddress, UserProfileInputContainer, UserProfileInputContainerAddress, UserProfileInputContainerRow } from "../../components/UserProfileInput/Styles"
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
+import {Button, ButtonTitle} from '../../components/Button/Styles'
+
 
 export const UserProfile = () => {
     return (
@@ -31,16 +33,24 @@ export const UserProfile = () => {
                 </UserProfileInputContainer>
 
                 <UserProfileInputContainerRow>
-                    <UserProfileInputContainer>
+                    <UserProfileInputContainerAddress>
                         <LabelText>CEP: </LabelText>
                         <UserProfileInputAddress placeholder={'06548-909'} />
-                    </UserProfileInputContainer>
+                    </UserProfileInputContainerAddress>
 
-                    <UserProfileInputContainer>
+                    <UserProfileInputContainerAddress>
                         <LabelText>Cidade: </LabelText>
                         <UserProfileInputAddress placeholder={'Moema-SP'} />
-                    </UserProfileInputContainer>
+                    </UserProfileInputContainerAddress>
                 </UserProfileInputContainerRow>
+
+                <Button>
+                    <ButtonTitle>Salvar</ButtonTitle>
+                </Button>
+
+                <Button>
+                    <ButtonTitle>Editar</ButtonTitle>
+                </Button>
             </Container>
         </ContainerScrollView>
     )

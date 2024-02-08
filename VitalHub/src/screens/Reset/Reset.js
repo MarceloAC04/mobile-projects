@@ -1,13 +1,18 @@
 import { Button, ButtonTitle } from "../../components/Button/Styles"
-import { Container } from "../../components/Container/Styles"
+import { Container, ContainerIcons } from "../../components/Container/Styles"
 import { Input } from "../../components/Input/Styles"
 import { Logo } from "../../components/Logo/Styles"
 import { SubTitle, SubTitleContainer } from "../../components/SubTitle/Styles"
 import { Title } from "../../components/Title/Styles"
+import { AntDesign } from '@expo/vector-icons';
 
-export const Reset = () => {
+export const Reset = ({navigation}) => {
     return (
         <Container>
+
+            <ContainerIcons>
+                <AntDesign onPress={() => navigation.navigate('Login')} name="arrowleft" size={30} color="#49B3BA" />
+            </ContainerIcons>
 
             <Logo source={require('../../assets/VitalHub-logo2.png')} />
 
@@ -19,7 +24,7 @@ export const Reset = () => {
 
             <Input placeholder={'Usuário ou E-mail'} />
 
-            <Button>
+            <Button onPress={() => navigation.navigate('EmailCode')}>
                 <ButtonTitle>Continuar</ButtonTitle>
             </Button>
         </Container>

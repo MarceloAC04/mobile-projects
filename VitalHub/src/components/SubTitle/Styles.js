@@ -12,4 +12,5 @@ export const SubTitle = styled.Text`
     color: #5F5C6B;
     text-align: center;
     margin-top: 15px;
+    margin-bottom: 5px;
 `

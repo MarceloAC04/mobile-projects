@@ -7,7 +7,7 @@ import { Button, ButtonTitle, ButtonTitleGoogle, GoogleButton } from "../../comp
 import { ContentAccount, TextAccount } from "../../components/ContentAccount/Styles"
 import { AntDesign } from '@expo/vector-icons';
 
-export const Login = () => {
+export const Login = ({navigation}) => {
     return (
         <Container>
 
@@ -20,7 +20,7 @@ export const Login = () => {
                 secureTextEntry
             />
 
-            <LinkMedium>Esqueceu sua senha?</LinkMedium>
+            <LinkMedium onPress={() =>navigation.navigate("Reset")}>Esqueceu sua senha?</LinkMedium>
 
             <Button>
                 <ButtonTitle>Entrar</ButtonTitle>
@@ -33,7 +33,7 @@ export const Login = () => {
 
             <ContentAccount>
                 <TextAccount>Não tem conta? </TextAccount>
-                <LinkAccount>Crie uma conta agora!</LinkAccount>
+                <LinkAccount onPress={() =>navigation.navigate("Register")}>Crie uma conta agora!</LinkAccount>
             </ContentAccount>
 
         </Container>

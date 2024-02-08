@@ -14,9 +14,10 @@ import { useFonts, MontserratAlternates_600SemiBold,
   MontserratAlternates_700Bold,
  } from '@expo-google-fonts/montserrat-alternates';
 
- import {Quicksand_500Medium } from '@expo-google-fonts/quicksand';
+ import {Quicksand_500Medium, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
 import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
+import { UserProfile } from './src/screens/UserProfile/UserProfile';
 
 
 export default function App() {
@@ -24,7 +25,8 @@ export default function App() {
     MontserratAlternates_600SemiBold,
     MontserratAlternates_500Medium,
     MontserratAlternates_700Bold,
-    Quicksand_500Medium
+    Quicksand_500Medium,
+    Quicksand_600SemiBold
   });
 
   if (!fontsLoaded && !fontsError) {
@@ -77,6 +79,12 @@ export default function App() {
           name='ResetPassword'
           component={ResetPassword}
           options={{ title: 'ResetPassword' }}
+        />
+
+        <Stack.Screen
+          name='UserProfile'
+          component={UserProfile}
+          options={{title: 'UserProfile'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

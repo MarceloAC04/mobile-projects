@@ -5,6 +5,7 @@ import { Navegation } from './src/screens/Navegation/Navegation';
 import { Login } from './src/screens/Login/Login';
 import { Reset } from './src/screens/Reset/Reset';
 import { Register } from './src/screens/Register/Register';
+import {ConsultationLocation} from './src/screens/ConsultationLocation/ConsultationLocation'
 
 //Instancia do stack navigator
 const Stack = createNativeStackNavigator();
@@ -18,6 +19,7 @@ import { useFonts, MontserratAlternates_600SemiBold,
 import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
 import { UserProfile } from './src/screens/UserProfile/UserProfile';
+import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
 
 
 export default function App() {
@@ -85,6 +87,18 @@ export default function App() {
           name='UserProfile'
           component={UserProfile}
           options={{title: 'UserProfile'}}
+        />
+
+        <Stack.Screen
+          name='ConsultationLocation'
+          component={ConsultationLocation}
+          options={{title: 'ConsultaionLocation'}}
+        />
+
+        <Stack.Screen
+          name='HomeMedic'
+          component={HomeMedic}
+          options={{title: 'HomeMedic'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

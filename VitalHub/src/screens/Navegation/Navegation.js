@@ -28,6 +28,14 @@ export const Navegation = ({navigation}) => {
                 title="UserProfile"
                 onPress={() => navigation.navigate("UserProfile")}
             />
+            <Button
+                title="ConsultationLocation"
+                onPress={() => navigation.navigate("ConsultationLocation")}
+            />
+            <Button
+                title="HomeMedic"
+                onPress={() => navigation.navigate("HomeMedic")}
+            />
         </View>
     )
 }

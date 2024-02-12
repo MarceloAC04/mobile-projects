@@ -20,6 +20,8 @@ import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
 import { UserProfile } from './src/screens/UserProfile/UserProfile';
 import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
+import { MedicalRecordEdition } from './src/screens/MedicalRecordEdition/MedicalRecordEdition';
+import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 
 
 export default function App() {
@@ -99,6 +101,18 @@ export default function App() {
           name='HomeMedic'
           component={HomeMedic}
           options={{title: 'HomeMedic'}}
+        />
+
+        <Stack.Screen
+          name='MedicalRecordEdition'
+          component={MedicalRecordEdition}
+          options={{title: 'MedicalRecordEdition'}}
+        />
+
+        <Stack.Screen
+          name='MedicalRecord'
+          component={MedicalRecord}
+          options={{title: 'MedicalRecord'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

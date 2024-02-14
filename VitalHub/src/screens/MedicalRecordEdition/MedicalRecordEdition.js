@@ -9,7 +9,7 @@ import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles";
 
 
 
-export const MedicalRecordEdition = () => {
+export const MedicalRecordEdition = ({navigation}) => {
     return (
         <ContainerScrollView>
             <Container>
@@ -31,8 +31,8 @@ export const MedicalRecordEdition = () => {
 
                 <UserProfileInputContainer>
                     <LabelText>Diagnóstico do paciente</LabelText>
-                    <UserProfileInputEdition 
-                         placeholder={'Diagnóstico do paciente'}
+                    <UserProfileInputEdition
+                        placeholder={'Diagnóstico do paciente'}
                     />
                 </UserProfileInputContainer>
 
@@ -47,11 +47,11 @@ export const MedicalRecordEdition = () => {
                 </UserProfileInputContainer>
 
                 <Button>
-                    <ButtonTitle>Salvar</ButtonTitle>
+                    <ButtonTitle onPress={() => navigation.navigate('MedicalRecord')}>Salvar</ButtonTitle>
                 </Button>
 
                 <SecondaryButton>
-                    <SecondaryButtonText>Cancelar</SecondaryButtonText>
+                    <SecondaryButtonText onPress={() => navigation.navigate('MedicalRecord')}>Cancelar</SecondaryButtonText>
                 </SecondaryButton>
 
             </Container>

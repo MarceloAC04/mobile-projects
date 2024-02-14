@@ -8,7 +8,7 @@ import { UserProfileInput, UserProfileInputContainer, UserProfileTextArea } from
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
 
 
-export const MedicalRecord = () => {
+export const MedicalRecord = ({navigation}) => {
     return (
         <ContainerScrollView>
             <Container>
@@ -50,7 +50,7 @@ export const MedicalRecord = () => {
                 </Button>
 
                 <Button>
-                    <ButtonTitle>Editar</ButtonTitle>
+                    <ButtonTitle onPress={() => navigation.navigate('MedicalRecordEdition')}>Editar</ButtonTitle>
                 </Button>
 
                 <SecondaryButton>

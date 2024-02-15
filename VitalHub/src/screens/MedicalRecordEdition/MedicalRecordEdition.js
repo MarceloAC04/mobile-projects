@@ -46,12 +46,12 @@ export const MedicalRecordEdition = ({navigation}) => {
                     />
                 </UserProfileInputContainer>
 
-                <Button>
-                    <ButtonTitle onPress={() => navigation.navigate('MedicalRecord')}>Salvar</ButtonTitle>
+                <Button onPress={() => navigation.navigate("MedicalRecord")}>
+                    <ButtonTitle>Salvar</ButtonTitle>
                 </Button>
 
-                <SecondaryButton>
-                    <SecondaryButtonText onPress={() => navigation.navigate('MedicalRecord')}>Cancelar</SecondaryButtonText>
+                <SecondaryButton onPress={() => navigation.navigate("MedicalRecord")}>
+                    <SecondaryButtonText>Cancelar</SecondaryButtonText>
                 </SecondaryButton>
 
             </Container>

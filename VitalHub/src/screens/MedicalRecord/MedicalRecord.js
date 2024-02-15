@@ -49,8 +49,8 @@ export const MedicalRecord = ({navigation}) => {
                     <ButtonTitle>Salvar</ButtonTitle>
                 </Button>
 
-                <Button>
-                    <ButtonTitle onPress={() => navigation.navigate('MedicalRecordEdition')}>Editar</ButtonTitle>
+                <Button onPress={() => navigation.navigate('MedicalRecordEdition')}>
+                    <ButtonTitle>Editar</ButtonTitle>
                 </Button>
 
                 <SecondaryButton>

@@ -1,21 +1,24 @@
 import styled from "styled-components";
+import { LinearGradient } from "expo-linear-gradient";
 
 
-export const HeaderContainer = styled.View`
-    background-color: #60BFC5;
-    border-radius: 0px 0px 15px 15px;
+export const HeaderContainer = styled(LinearGradient).attrs({
+    colors: ['#60BFC5', '#496BBA'],
+    start: {x: -0.05, y: 1.08},
+    end: {x: 1, y: 0}
+
+})`
     width: 100%;
     height: 144px;
-    border-radius: 0px 0px 15px 15px;
-`
+    padding: 20px;
+    padding-bottom: 22px;
 
-export const HeaderContent = styled.SafeAreaView`
-    margin-top: 45px;
     flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    gap: 50px;
+
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px 4px 15px #00000014;
 `
 
 export const HeaderUserProfile = styled.View`

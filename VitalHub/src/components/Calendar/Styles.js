@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import CalendarStrip from "react-native-calendar-strip"
 
-export const Calendar = styled(CalendarStrip)`
+export const CalendarStyle = styled(CalendarStrip)`
     height: 100px;
     width: 360px;
-    margin-top: 20px;
     font-size: 16px;
-    font-family: 'MontserratAlternates_600SemiBold';
+`
+
+export const ContainerCalendarScrollView = styled.ScrollView`
+    flex: 0.4;
+    margin-top: 20px;
+    margin-bottom: 38px;
 `

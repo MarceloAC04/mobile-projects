@@ -12,3 +12,8 @@ export const TitleHeader = styled(Title)`
     margin-bottom: 0px;
     color: white;
 `
+
+export const TitleCard = styled(Title)`
+    color: #33303E;
+    font-size: 16px;
+`

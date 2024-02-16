@@ -23,8 +23,22 @@ export const HomeMedic = () => {
                     <StatusButtonText>Canceladas</StatusButtonText>
                 </StatusButton>
             </StatusButtonContainer>
+            
+            <Card
+            img={require('../../assets/foto-de-perfil-2.png')}
+            name={'Nicole Sarga'}
+            age={"22 anos"}
+            query={'Rotina'}
+            schedule={'14:00'}
+            />
 
-            <Card/>
+            <Card
+            img={require('../../assets/foto-de-perfil.png')}
+            name={'Richard Kosta'}
+            age={"28 anos"}
+            query={'Urgência'}
+            schedule={'15:00'}
+            />
 
         </Container>
     )

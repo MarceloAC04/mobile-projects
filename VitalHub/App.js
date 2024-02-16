@@ -15,7 +15,7 @@ import { useFonts, MontserratAlternates_600SemiBold,
   MontserratAlternates_700Bold,
  } from '@expo-google-fonts/montserrat-alternates';
 
- import {Quicksand_500Medium, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
+ import {Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
 import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
 import { UserProfile } from './src/screens/UserProfile/UserProfile';
@@ -29,6 +29,7 @@ export default function App() {
     MontserratAlternates_600SemiBold,
     MontserratAlternates_500Medium,
     MontserratAlternates_700Bold,
+    Quicksand_400Regular,
     Quicksand_500Medium,
     Quicksand_600SemiBold
   });

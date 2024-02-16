@@ -9,7 +9,6 @@ export const HeaderContainer = styled(LinearGradient).attrs({
 
 })`
     width: 100%;
-    height: 144px;
     padding: 20px;
     padding-bottom: 22px;
 

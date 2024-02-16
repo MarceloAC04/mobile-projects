@@ -1,46 +1,83 @@
-import { CalendarStyle, ContainerCalendarScrollView } from "../../components/Calendar/Styles"
+import { CalendarStyle} from "../../components/Calendar/Styles"
+import { StyleSheet } from "react-native";
 import moment from "moment"
 import 'moment/locale/pt-br';
 
-datesWhitelist = [
-    //  date range
-    {
-        start: (moment()),
-        end: (moment())
-    }
-];
+//instância da data atual
+const currentDate = new Date();
 
-const customDatesStylesFunc = date => {
-    if (date.isoWeekday() != moment()) {
-        return {
-            dateNumberStyle: { fontSize: 16, fontFamily: 'Quicksand_500Medium', color: '#5F5C6B' },
-            dateNameStyle: { fontSize: 12, fontFamily: 'MontserratAlternates_600SemiBold', color: '#ACABB7' },
-        }
-    }
-}
+//define a data inicial como sendo o primeiro dia do mês
+const startingDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 2);
+
+//define a data final como sendo o último dia do mês
+const endingDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
 
 export const Calendar = () => {
     return (
-        <ContainerCalendarScrollView>
             <CalendarStyle
                 scrollable
-                selectedDate={moment()}
-                minDate={moment()}
-                calendarHeaderStyle={{
-                    fontFamily: 'MontserratAlternates_600SemiBold',
-                    fontSize: 20,
-                    textAlign: 'left',
-                    width: '95%',
-                    color: '#4E4B59',
 
-                }}
-                datesWhitelist={datesWhitelist}
-                customDatesStyles={customDatesStylesFunc}
-                highlightDateNumberStyle={{ fontSize: 16, fontFamily: 'Quicksand_600SemiBold', color: 'white' }}
-                highlightDateNameStyle={{ fontSize: 12, fontFamily: 'Quicksand_600SemiBold', color: 'white' }}
-                highlightDateContainerStyle={{ backgroundColor: '#60BFC5' }}
+                calendarAnimation={{ type: "sequence", duration: 30 }}
+                daySelectionAnimation={styleCalendar.selectedAnimationStyle}
+                iconLeftStyle={styleCalendar.iconsStyle}
+                iconRightStyle={styleCalendar.iconsStyle}
+
+                selectedDate={currentDate}
+                startingDate={moment()}
+                minDate={moment()}
+                maxDate={endingDate}
+
+                calendarHeaderStyle={styleCalendar.calendarHeaderStyle}
+                dateNumberStyle={styleCalendar.numberDateStyle}
+                dateNameStyle={styleCalendar.nameDateStyle}
+
+                // estilização do item que está selecionado - efeito do item marcado
+                highlightDateNameStyle={styleCalendar.selectedDateNameStyle}
+                highlightDateNumberStyle={styleCalendar.selectedDateNumberStyle}
+                highlightDateContainerStyle={styleCalendar.selectedContainerStyle}
                 IconContainer={{ flex: 0.1 }}
             />
-        </ContainerCalendarScrollView>
     )
 }
+
+const styleCalendar = StyleSheet.create({
+    iconsStyle: {
+        display: 'none'
+    },
+    calendarHeaderStyle: {
+        fontSize: 22,
+        textAlign: "center",
+        alignSelf: 'flex-start',
+        color: '#4E4B59',
+        fontFamily: "MontserratAlternates_600SemiBold",
+        paddingHorizontal: 16
+    },
+    nameDateStyle: {
+        color: "#ACABB7",
+        fontSize: 12,
+        textTransform: 'capitalize'
+    },
+    numberDateStyle: {
+        color: "#5F5C6B",
+        fontSize: 16
+    },
+    selectedDateNameStyle: {
+        color: "white",
+        fontSize: 12,
+        fontWeight: "bold",
+        textTransform: 'capitalize'
+    },
+    selectedDateNumberStyle: {
+        color: "white",
+        fontSize: 14
+    },
+    selectedContainerStyle: {
+        backgroundColor: `#60BFC5`
+    },
+    selectedAnimationStyle: {
+        type: "border",
+        duration: 200,
+        borderWidth: 2,
+        borderHighlightColor: "#49B3BA"
+    }
+})

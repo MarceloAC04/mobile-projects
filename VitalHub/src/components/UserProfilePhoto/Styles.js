@@ -13,3 +13,9 @@ export const UserProfilePhotoHeader = styled(UserProfilePhoto)`
     margin-bottom: 0px;
     border-radius: 5px;
 `
+export const UserProfilePhotoCard = styled(UserProfilePhoto)`
+    width: 77px;
+    height: 80px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+`

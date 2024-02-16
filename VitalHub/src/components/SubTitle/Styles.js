@@ -14,3 +14,15 @@ export const SubTitle = styled.Text`
     margin-top: 15px;
     margin-bottom: 5px;
 `
+
+export const SubTitleCardAge = styled.Text`
+    font-size: 14px;
+    font-family: 'Quicksand_400Regular';
+    color: #8C8A97;
+`
+
+export const SubTitleCard = styled.Text`
+    font-size: 16px;
+    font-family: 'Quicksand_600SemiBold';
+    color: #8C8A97;
+`

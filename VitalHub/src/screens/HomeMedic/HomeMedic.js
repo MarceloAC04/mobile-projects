@@ -1,42 +1,55 @@
 import { Container } from "../../components/Container/Styles"
 import { Calendar } from "../../components/Calendar/Calendar";
-import { StatusButton, StatusButtonContainer, StatusButtonText } from "../../components/StatusButton/Styles"
+import { StatusButtonContainer} from "../../components/StatusButton/Styles"
 import { Header } from "../../components/Header/Header";
-import { Card } from "../../components/Card/Card";
-import { FlatList } from "react-native";
 import { useState } from "react";
+import { CardList } from "../../components/CardList/CardList";
+import {FilterStatusButton } from "../../components/StatusButton/StatusButton";
 
-const data = [
-    { id: '1', img: require('../../assets/foto-de-perfil-2.png'), name: 'Nicole Sarga', age: '22 anos', query: 'Rotina', schedule: '14:00', text: 'Cancelar' },
-    { id: '2', img: require('../../assets/foto-de-perfil.png'), name: 'Richard Kosta', age: '28 anos', query: 'Urgência', schedule: '15:00', text: 'Cancelar' }
+const scheduleCard = [
+    { id: '1', img: require('../../assets/foto-de-perfil-2.png'),name: 'Nicole Sarga', age: '22 anos', query: 'Rotina', schedule: '14:00' },
+    { id: '2', img: require('../../assets/foto-de-perfil.png'),name: 'Richard Kosta', age: '28 anos', query: 'Urgência', schedule: '15:00' }
     // Adicione mais itens aqui...
 ];
-const data2 = [
-    { id: '1', img: require('../../assets/foto-de-perfil-2.png'), name: 'Nicole Sarga', age: '22 anos', query: 'Rotina', schedule: '14:00', text: 'Ver Prontuário' },
-    { id: '2', img: require('../../assets/foto-de-perfil.png'), name: 'Richard Kosta', age: '28 anos', query: 'Urgência', schedule: '15:00', text: 'Ver Prontuário' },
+const realizedCard = [
+    { id: '1', img: require('../../assets/foto-de-perfil-2.png'), name: 'Nicole Sarga', age: '22 anos', query: 'Rotina', schedule: '14:00' },
+    { id: '2', img: require('../../assets/foto-de-perfil.png'), name: 'Richard Kosta', age: '28 anos', query: 'Urgência', schedule: '15:00' },
     // Adicione mais itens aqui...
 ];
-const data3 = [
-    { id: '1', img: require('../../assets/foto-de-perfil.png'), name: 'Richard Kosta', age: '28 anos', query: 'Urgência', schedule: '15:00', text: '' }
+const cancelCard = [
+    { id: '1', img: require('../../assets/foto-de-perfil-3.png'), name: 'Robbert Charlie', age: '62 anos', query: 'Consulta', schedule: '15:00'}
     // Adicione mais itens aqui...
 ];
+
+const cards = [
+    { id: '1', img: require('../../assets/foto-de-perfil-2.png'), situation: 'pendente', name: 'Nicole Sarga', age: '22 anos', query: 'Rotina', schedule: '14:00' },
+    { id: '2', img: require('../../assets/foto-de-perfil.png'), situation: 'pendente', name: 'Richard Kosta', age: '28 anos', query: 'Urgência', schedule: '15:00' },
+    { id: '3', img: require('../../assets/foto-de-perfil-2.png'), situation: 'realizada', name: 'Nicole Sarga', age: '22 anos', query: 'Rotina', schedule: '14:00' },
+    { id: '4', img: require('../../assets/foto-de-perfil.png'), situation: 'realizada', name: 'Richard Kosta', age: '28 anos', query: 'Urgência', schedule: '15:00' },
+    { id: '5', img: require('../../assets/foto-de-perfil-3.png'), situation: 'cancelada', name: 'Robbert Charlie', age: '62 anos', query: 'Consulta', schedule: '15:00'}
+]
 
 
 export const HomeMedic = () => {
-    const [press, setPress] = useState(0);
+    const [statusLista, setStatusLista] = useState("pendente");
 
-    function isPress() {
-        if (press === 0) {
-            return data
+    function verifyStatus() {
+        if (statusLista === "pendente") {
+            return scheduleCard;
         }
-        else if (press === 1)
-        {
-            return data2
+        else if (statusLista === "realizada") {
+            return realizedCard;
         }
         else {
-            return data3
+            return cancelCard;
         }
     }
+
+    function verifySituation() {
+        return filterCards = cards.filter((situation) => statusLista);
+    }
+
+    
 
     return (
         <Container>
@@ -44,32 +57,28 @@ export const HomeMedic = () => {
             <Calendar />
 
             <StatusButtonContainer>
-                <StatusButton onPress={() => setPress(0)} style={{ backgroundColor: press === 0 ? "#607EC5" : null}}>
-                    <StatusButtonText style={{ color: press === 0 ? 'white' : '#607EC5'}}>Agendadas</StatusButtonText>
-                </StatusButton>
+                <FilterStatusButton 
+                    textButton={"Agendadas"}
+                    clickButton={statusLista === "pendente"}  
+                    onPress={() => setStatusLista("pendente")}
+                />
 
-                <StatusButton onPress={() => setPress(1)} style={{ backgroundColor: press === 1 ? "#607EC5" : null}}>
-                    <StatusButtonText style={{ color: press === 1 ? 'white' : '#607EC5'}}>Realizadas</StatusButtonText>
-                </StatusButton>
-
-                <StatusButton onPress={() => setPress(2)} style={{ backgroundColor: press === 2 ? "#607EC5" : null}}>
-                    <StatusButtonText style={{ color: press === 2 ? 'white' : '#607EC5'}}>Canceladas</StatusButtonText>
-                </StatusButton>
+                <FilterStatusButton 
+                    textButton={"Realizadas"}
+                    clickButton={statusLista === "realizada"}  
+                    onPress={() => setStatusLista("realizada")}
+                />
+                <FilterStatusButton 
+                    textButton={"Canceladas"}
+                    clickButton={statusLista === "cancelada"}  
+                    onPress={() => setStatusLista("cancelada")}
+                />
             </StatusButtonContainer>
-            
 
-            <FlatList
-                data={isPress()}
-                renderItem={({ item }) => (
-                    <Card
-                        img={item.img}
-                        name={item.name}
-                        age={item.age}
-                        query={item.query}
-                        schedule={item.schedule}
-                        text={item.text}
-                    />
-                )}
+
+            <CardList
+                status={statusLista}
+                verify={verifySituation()}
             />
         </Container>
     )

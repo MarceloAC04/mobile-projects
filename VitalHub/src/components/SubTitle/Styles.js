@@ -5,6 +5,9 @@ export const SubTitleContainer = styled.View`
     justify-content: center;
     align-items: center;
 `
+export const SubTitleContainerModal = styled(SubTitleContainer)`
+    width: 90%;
+`
 
 export const SubTitle = styled.Text`
     font-size: 16px;

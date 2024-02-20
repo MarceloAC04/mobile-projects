@@ -19,3 +19,8 @@ export const UserProfilePhotoCard = styled(UserProfilePhoto)`
     margin-bottom: 0px;
     border-radius: 5px;
 `
+export const UserProfilePhotoModal = styled(UserProfilePhoto)`
+    width: 285px;
+    height: 181px;
+    border-radius: 5px;
+`

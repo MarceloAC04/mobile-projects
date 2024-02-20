@@ -28,6 +28,7 @@ export const CardList = ({ status, verify }) => {
                         age={item.age}
                         query={item.query}
                         schedule={item.schedule}
+                        email={item.email}
                     />
                 )}
             />

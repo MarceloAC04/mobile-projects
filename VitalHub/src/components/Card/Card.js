@@ -16,7 +16,6 @@ export const AppointmentCard = ({ img, name, age, query, schedule, email, situat
                     <ScheduleContainer>
                         <ScheduleTime> <AntDesign name="clockcircle" size={14} color="#49B3BA" />  {schedule}</ScheduleTime>
                     </ScheduleContainer>
-
                 ) : (
                     <RealizedTimeContainer>
                         <RealizedScheduleTime> <AntDesign name="clockcircle" size={14} color="#4E4B59" />  {schedule}</RealizedScheduleTime>

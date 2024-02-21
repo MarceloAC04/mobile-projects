@@ -29,3 +29,14 @@ export const ModalMedicalRecordContainer = styled(ModalContainer)`
     width: 334px;
     padding: 20px;
 `
+
+export const ModalScheduleView = styled(ModalView)`
+    justify-content: flex-end;
+`
+
+export const ModalScheduleContainer = styled(ModalMedicalRecordContainer)`
+    width: 99%;
+    height: 78%;
+    border-radius: 10px 10px 0px 0px;
+    justify-content: space-between;
+`

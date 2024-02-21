@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Navegation } from './src/screens/Navegation/Navegation';
 import { Login } from './src/screens/Login/Login';
 import { Reset } from './src/screens/Reset/Reset';
+import { HomePatient } from './src/screens/HomePatient/HomePatient'
 import { Register } from './src/screens/Register/Register';
 import {ConsultationLocation} from './src/screens/ConsultationLocation/ConsultationLocation'
 
@@ -114,6 +115,11 @@ export default function App() {
           name='MedicalRecord'
           component={MedicalRecord}
           options={{title: 'MedicalRecord'}}
+        />
+        <Stack.Screen
+          name='HomePatient'
+          component={HomePatient}
+          options={{title: 'HomePatient'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

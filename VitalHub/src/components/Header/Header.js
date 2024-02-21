@@ -4,14 +4,14 @@ import { SubTitle } from "../../components/SubTitle/Styles"
 import { TitleHeader } from "../../components/Title/Styles"
 import { FontAwesome } from '@expo/vector-icons'
 
-export const Header = () => {
+export const Header = ({userPhoto, userName}) => {
     return (
         <HeaderContainer>
             <HeaderUserProfile>
-                <UserProfilePhotoHeader source={require('../../assets/foto-de-perfil-medico.png')} />
+                <UserProfilePhotoHeader source={userPhoto} />
                 <HeaderUserProfileText>
                     <SubTitle>Bem vindo</SubTitle>
-                    <TitleHeader>Dr.Claudio</TitleHeader>
+                    <TitleHeader>{userName}</TitleHeader>
                 </HeaderUserProfileText>
             </HeaderUserProfile>
             <FontAwesome name="bell" size={24} color="white" />

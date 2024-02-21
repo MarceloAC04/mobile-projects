@@ -10,7 +10,7 @@ export const UserProfilePhoto = styled.Image`
 export const UserProfilePhotoHeader = styled(UserProfilePhoto)`
     width: 70px;
     height: 70px;
-    margin-bottom: 0px;
+    margin-bottom: 2px;
     border-radius: 5px;
 `
 export const UserProfilePhotoCard = styled(UserProfilePhoto)`

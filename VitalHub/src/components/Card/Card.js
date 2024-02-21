@@ -1,14 +1,11 @@
-import { useState } from "react"
-import { RealizedScheduleTime, RealizedTimeContainer, ScheduleContainer, ScheduleTime } from "../ScheduleCard/Styles"
-import { SubTitleCard, SubTitleCardAge } from "../SubTitle/Styles"
-import { TitleCard } from "../Title/Styles"
-import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles"
-import { CardButton, CardButtonText, CardContainer, CardContainerText, CardLinkText, RealizedCardLinkText } from "./Style"
+import { RealizedScheduleTime, RealizedTimeContainer, ScheduleContainer, ScheduleTime } from "../ScheduleCard/Styles";
+import { CardContainer, CardContainerText, CardLinkText, RealizedCardLinkText } from "./Style";
+import { SubTitleCard, SubTitleCardAge } from "../SubTitle/Styles";
+import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
 import { AntDesign } from '@expo/vector-icons';
-import { ModalAppointment, ModalMedicalRecord } from "../Modal/Modal"
+import { TitleCard } from "../Title/Styles";
 
-export const AppointmentCard = ({ img, name, age, query, schedule, email, situation }) => {
-    const [modalVisible, setModalVisible] = useState(false);
+export const AppointmentCard = ({ img, name, age, query, schedule, email, situation, onPressAppoiment, onPressCancel }) => {
     return (
         <CardContainer>
             <UserProfilePhotoCard source={img} />
@@ -27,31 +24,10 @@ export const AppointmentCard = ({ img, name, age, query, schedule, email, situat
                 )}
             </CardContainerText>
             {situation == 'pendente' ? (
-                <>
-                    <CardLinkText onPress={() => setModalVisible(true)}> Cancelar </CardLinkText>
-                    <ModalAppointment
-                        visible={modalVisible}
-                        onPress={() => setModalVisible(false)}
-                        animation={'slide'}
-                        transparent={true}
-                    />
-                </>
+                <CardLinkText onPress={onPressCancel}> Cancelar </CardLinkText>
             ) : (null)}
             {situation == 'realizada' ? (
-                <>
-                    <RealizedCardLinkText onPress={() => setModalVisible(true)}>Ver Prontuário</RealizedCardLinkText>
-                    <ModalMedicalRecord
-                        visible={modalVisible}
-                        onPress={() => setModalVisible(false)}
-                        animation={'slide'}
-                        transparent={true}
-                        img={img}
-                        name={name}
-                        age={age}
-                        email={email}
-
-                    />
-                </>
+                <RealizedCardLinkText onPress={onPressAppoiment}>Ver Prontuário</RealizedCardLinkText>
             ) : (<CardLinkText>           </CardLinkText>)}
         </CardContainer >
     )

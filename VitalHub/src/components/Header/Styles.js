@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { LinearGradient } from "expo-linear-gradient";
+import styled from "styled-components";
 
 
 export const HeaderContainer = styled(LinearGradient).attrs({
@@ -22,7 +22,7 @@ export const HeaderContainer = styled(LinearGradient).attrs({
 
 export const HeaderUserProfile = styled.View`
     flex-direction: row;
-    width: 55%;
+    width: 60%;
     gap: 10px;
 `
 

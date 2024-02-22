@@ -30,7 +30,7 @@ export const SubTitleCard = styled.Text`
     color: #8C8A97;
 `
 
-export const SubTitleCardAvaliation = styled.Text`
+export const SubTitleCardScore = styled.Text`
     font-size: 14px;
     font-family: 'Quicksand_600SemiBold';
     color: #F9A620;

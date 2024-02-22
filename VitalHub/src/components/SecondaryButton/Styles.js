@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SecondaryButton = styled.TouchableOpacity`
     margin-top: 30px;
+    margin-bottom: 10px;
 `
 
 export const SecondaryButtonText = styled.Text`

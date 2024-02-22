@@ -12,7 +12,7 @@ import { AppointmentLevelButtonContainer } from "../StatusButton/Styles";
 import { ScheduleAppointmentContainer, ScheduleAppointmentInput } from "../ModalAppointmentInput/Styles";
 
 
-export const ModalAppointment = ({ animation, transparent, visible, onPress, img, name, age, email, situation }) => {
+export const ModalAppointment = ({id, animation, transparent, visible, onPress, img, name, age, email, situation }) => {
     return (
         <Modal
             animationType={animation}
@@ -54,10 +54,10 @@ export const ModalAppointment = ({ animation, transparent, visible, onPress, img
     )
 }
 
-export const ModalScheduleAppointment = ({ animation, transparent, visible, onPress }) => {
+export const ModalScheduleAppointment = ({ animation, transparent, visible, onPress, ...rest  }) => {
     const [statusAppoinment, setStatusAppoinment] = useState("");
     return (
-        <Modal
+        <Modal {...rest }
             animationType={animation}
             transparent={transparent}
             visible={visible}

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const CardContainer = styled.View`
     width: 320px;
@@ -36,10 +36,16 @@ export const CardClinicContainer = styled(CardContainer)`
     flex-direction: column;
     padding: 18px;
     margin-top: 12px;
+    gap: 5px;
+
+    ${props => props.onPress ? css`
+        border-color: 2px solid #496BBA;
+    ` : css`
+    border-color: none;
+    `}
 `
 export const CardClinicContent = styled.View`
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-
 `

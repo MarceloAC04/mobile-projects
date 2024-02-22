@@ -17,7 +17,7 @@ export const StatusButton = styled.TouchableHighlight.attrs({
 
     ${props => props.clickButton ? css`
         background-color: #607EC5;
-    ` :  css`
+    ` : css`
     background-color: #FBFBFB;
     `}
     align-items: center;
@@ -30,7 +30,34 @@ export const StatusButtonText = styled.Text`
 
     ${props => props.clickButton ? css`
         color: white;
-    ` :  css`
+    ` : css`
     color: #607EC5;
+    `}
+`
+
+export const AppointmentLevelButtonContainer = styled(StatusButtonContainer)`
+    justify-content: none;
+    margin-bottom: 0;
+    gap: 25px;
+`
+
+export const AppointmentLevelButtonStyle = styled(StatusButton)`
+    border: 2px solid #60BFC5;
+    width: 88px;
+    height: 40px;
+
+    ${props => props.clickButton ? css`
+        background-color: #60BFC5;
+    ` : css`
+    background-color: #FBFBFB;
+    `}
+`
+export const AppointmentLevelButtonText = styled(StatusButtonText)`
+    font-size: 14px;
+
+    ${props => props.clickButton ? css`
+        color: white;
+    ` : css`
+    color: #60BFC5;
     `}
 `

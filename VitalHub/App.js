@@ -16,13 +16,14 @@ import { useFonts, MontserratAlternates_600SemiBold,
   MontserratAlternates_700Bold,
  } from '@expo-google-fonts/montserrat-alternates';
 
- import {Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
+import {Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
 import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
 import { UserProfile } from './src/screens/UserProfile/UserProfile';
 import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
 import { MedicalRecordEdition } from './src/screens/MedicalRecordEdition/MedicalRecordEdition';
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
+import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
 
 
 export default function App() {
@@ -116,10 +117,17 @@ export default function App() {
           component={MedicalRecord}
           options={{title: 'MedicalRecord'}}
         />
+
         <Stack.Screen
           name='HomePatient'
           component={HomePatient}
           options={{title: 'HomePatient'}}
+        />
+
+        <Stack.Screen
+          name='ClinicSelect'
+          component={ClinicSelect}
+          options={{title: 'ClinicSelect'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

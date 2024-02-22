@@ -28,3 +28,8 @@ export const GoogleButton = styled(Button)`
 export const ButtonTitleGoogle = styled(ButtonTitle)`
     color: #496BBA;
 `
+
+export const ModalAppointmentButton = styled(Button)`
+    width: 100%;
+    margin-top: 30px;
+`

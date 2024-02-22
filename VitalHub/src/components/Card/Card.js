@@ -1,6 +1,6 @@
 import { RealizedScheduleTime, RealizedTimeContainer, ScheduleContainer, ScheduleTime } from "../ScheduleCard/Styles";
-import { CardContainer, CardContainerText, CardLinkText, RealizedCardLinkText } from "./Style";
-import { SubTitleCard, SubTitleCardAge } from "../SubTitle/Styles";
+import { CardClinicContainer, CardClinicContent, CardContainer, CardContainerText, CardLinkText, RealizedCardLinkText } from "./Style";
+import { SubTitleCard, SubTitleCardAge, SubTitleCardAvaliation } from "../SubTitle/Styles";
 import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
 import { AntDesign } from '@expo/vector-icons';
 import { TitleCard } from "../Title/Styles";
@@ -29,5 +29,17 @@ export const AppointmentCard = ({ img, name, age, query, schedule, email, situat
                 <RealizedCardLinkText onPress={onPressAppoiment}>Ver Prontuário</RealizedCardLinkText>
             ) : (<CardLinkText>           </CardLinkText>)}
         </CardContainer >
+    )
+}
+
+
+export const ClinicSelectCard  = () => {
+    return(
+        <CardClinicContainer>
+            <CardClinicContent>
+                <TitleCard>Clínica Natureh</TitleCard>
+                <SubTitleCardAvaliation><AntDesign name="star" size={16} color="#F9A620" />4,2</SubTitleCardAvaliation>
+            </CardClinicContent>
+        </CardClinicContainer>
     )
 }

@@ -30,3 +30,16 @@ export const CardLinkText = styled.Text`
 export const RealizedCardLinkText = styled(CardLinkText)`
     color: #344F8F;
 `
+
+export const CardClinicContainer = styled(CardContainer)`
+    height: 84px;
+    flex-direction: column;
+    padding: 18px;
+    margin-top: 12px;
+`
+export const CardClinicContent = styled.View`
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+
+`

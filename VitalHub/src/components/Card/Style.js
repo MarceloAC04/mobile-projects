@@ -4,7 +4,7 @@ export const CardContainer = styled.View`
     width: 320px;
     height: 102px;
     background-color: #FFF;
-    margin-bottom: 12px;
+    margin-top: 12px;
     flex-direction: row;
     align-items: center;
     align-self: center;
@@ -13,10 +13,17 @@ export const CardContainer = styled.View`
     border-radius: 5px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
     position: relative;
+
+    ${props => props.onPress ? css`
+        border: 2px solid #496BBA;
+    ` : css`
+    border: none;
+    `}
 `
 
 export const CardContainerText = styled.View`
     height: 90%;
+    justify-content: center;
 `
 
 export const CardLinkText = styled.Text`
@@ -31,17 +38,25 @@ export const RealizedCardLinkText = styled(CardLinkText)`
     color: #344F8F;
 `
 
-export const CardClinicContainer = styled(CardContainer)`
+export const CardClinicContainer = styled.TouchableHighlight.attrs({
+    underlayColor: 'transparent'
+})`
+    width: 320px;
     height: 84px;
+    background-color: #FFF;
     flex-direction: column;
+    align-items: center;
+    align-self: center;
     padding: 18px;
     margin-top: 12px;
     gap: 5px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 
-    ${props => props.onPress ? css`
-        border-color: 2px solid #496BBA;
+    ${props => props.clickButton === true ? css`
+        border: 2px solid #496BBA;
     ` : css`
-    border-color: none;
+    border: none;
     `}
 `
 export const CardClinicContent = styled.View`

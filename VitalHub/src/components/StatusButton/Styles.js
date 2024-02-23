@@ -4,7 +4,7 @@ export const StatusButtonContainer = styled.View`
     width: 90%;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
 `
 
 export const StatusButton = styled.TouchableHighlight.attrs({

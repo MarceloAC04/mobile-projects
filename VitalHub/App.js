@@ -24,6 +24,7 @@ import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
 import { MedicalRecordEdition } from './src/screens/MedicalRecordEdition/MedicalRecordEdition';
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
+import { MedicSelect } from './src/screens/MedicSelect/MedicSelect';
 
 
 export default function App() {
@@ -128,6 +129,11 @@ export default function App() {
           name='ClinicSelect'
           component={ClinicSelect}
           options={{title: 'ClinicSelect'}}
+        />
+        <Stack.Screen
+          name='MedicSelect'
+          component={MedicSelect}
+          options={{title: 'MedicSelect'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

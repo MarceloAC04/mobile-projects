@@ -68,13 +68,6 @@ export const ModalScheduleAppointment = ({ animation, transparent, visible, onPr
 
                     <ModalScheduleAppointmentFormContainer>
                         <ScheduleAppointmentContainer>
-                            <LabelText>Informe o tipo de consulta</LabelText>
-                            <ScheduleAppointmentInput
-                                placeholder={'Tipo de consulta'}
-                            />
-                        </ScheduleAppointmentContainer>
-
-                        <ScheduleAppointmentContainer>
                             <LabelText>Qual o nível da consulta</LabelText>
                             <AppointmentLevelButtonContainer>
                                 <AppointmentLevelButton

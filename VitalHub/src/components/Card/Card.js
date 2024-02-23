@@ -1,6 +1,6 @@
 import { RealizedScheduleTime, RealizedTimeContainer, ScheduleClinicContainer, ScheduleContainer, ScheduleTime } from "../ScheduleCard/Styles";
 import { CardClinicContainer, CardClinicContent, CardContainer, CardContainerText, CardLinkText, RealizedCardLinkText } from "./Style";
-import { SubTitleCard, SubTitleCardAge, SubTitleCardScore } from "../SubTitle/Styles";
+import { SubTitleCard, SubTitleCardAge, SubTitleCardScore, SubTitleClinicCard, SubTitleMedicCard } from "../SubTitle/Styles";
 import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import { TitleCard } from "../Title/Styles";
@@ -64,20 +64,34 @@ export const AppointmentCard = ({ id, img, name, age, query, schedule, email, si
 }
 
 
-export const ClinicSelectCard = ({ id, clinicName, score, city, uf, days }) => {
+export const ClinicSelectCard = ({ id, clinicName, onPress, select, score, city, uf, days }) => {
     return (
-        <CardClinicContainer>
+        <CardClinicContainer clickButton={select} onPress={onPress}>
+            <>
             <CardClinicContent>
                 <TitleCard>{clinicName}</TitleCard>
                 <SubTitleCardScore><AntDesign name="star" size={16} color="#F9A620" />{score}</SubTitleCardScore>
             </CardClinicContent>
 
             <CardClinicContent>
-                <SubTitleCard>{city}, {uf}</SubTitleCard>
+                <SubTitleClinicCard>{city}, {uf}</SubTitleClinicCard>
                 <ScheduleClinicContainer>
                     <ScheduleTime><MaterialCommunityIcons name="calendar-outline" size={16} color="#49B3BA" /> {days}</ScheduleTime>
                 </ScheduleClinicContainer>
             </CardClinicContent>
+            </>
         </CardClinicContainer>
+    )
+}
+
+export const MedicSelectCard = ({id, img, medicName, speciality}) => {
+    return(
+        <CardContainer>
+            <UserProfilePhotoCard source={img} />
+            <CardContainerText>
+                <TitleCard>{medicName}</TitleCard>
+                <SubTitleMedicCard>{speciality}</SubTitleMedicCard>
+            </CardContainerText>
+        </CardContainer>
     )
 }

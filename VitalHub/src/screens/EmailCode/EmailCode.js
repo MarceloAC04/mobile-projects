@@ -3,9 +3,9 @@ import { Logo } from "../../components/Logo/Styles"
 import { Title } from "../../components/Title/Styles"
 import { SubTitle } from "../../components/SubTitle/Styles"
 import { EmailCodeInput, EmailCodeInputContainer } from "../../components/EmailCodeInput/Styles"
-import { Button, ButtonTitle } from "../../components/Button/Styles"
-import { SecondaryButton, SecondaryButtonText } from "../../components/SecondaryButton/Styles"
 import { AntDesign } from '@expo/vector-icons';
+import { ButtonEnter } from "../../components/Button/Button"
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 
 export const EmailCode = ({navigation}) => {
     return (
@@ -32,13 +32,14 @@ export const EmailCode = ({navigation}) => {
                 <EmailCodeInput placeholder={'0'} maxLength={1} keyboardType={'numeric'} />
             </EmailCodeInputContainer>
 
-            <Button onPress={() => navigation.navigate('ResetPassword')}>
-                <ButtonTitle>ENTRAR</ButtonTitle>
-            </Button>
+            <ButtonEnter 
+                onPress={() => navigation.navigate('ResetPassword')}
+                placeholder={'ENTRAR'}
+            />
 
-            <SecondaryButton>
-                <SecondaryButtonText>Reenviar Código</SecondaryButtonText>
-            </SecondaryButton>
+            <ButtonSecondary 
+                placeholder={'Reenviar Código'}      
+            />
         </Container>
     )
 }

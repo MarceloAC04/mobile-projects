@@ -3,9 +3,8 @@ import { Container } from "../../components/Container/Styles"
 import { Title } from "../../components/Title/Styles"
 import { Input } from "../../components/Input/Styles"
 import { LinkAccount, LinkMedium } from "../../components/Links/Styles"
-import { Button, ButtonTitle, ButtonTitleGoogle, GoogleButton } from "../../components/Button/Styles"
 import { ContentAccount, TextAccount } from "../../components/ContentAccount/Styles"
-import { AntDesign } from '@expo/vector-icons';
+import { ButtonEnter, ButtonGoogle } from "../../components/Button/Button"
 
 export const Login = ({navigation}) => {
     return (
@@ -22,14 +21,13 @@ export const Login = ({navigation}) => {
 
             <LinkMedium onPress={() =>navigation.navigate("Reset")}>Esqueceu sua senha?</LinkMedium>
 
-            <Button>
-                <ButtonTitle>Entrar</ButtonTitle>
-            </Button>
+            <ButtonEnter 
+            placeholder={'Entrar'}
+            />
 
-            <GoogleButton>
-                <AntDesign name="google" size={20} color="#496BBA" />
-                <ButtonTitleGoogle>Entrar com o Google</ButtonTitleGoogle>
-            </GoogleButton>
+            <ButtonGoogle 
+            placeholder={'Entrar com o Google'}
+            />
 
             <ContentAccount>
                 <TextAccount>Não tem conta? </TextAccount>

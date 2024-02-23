@@ -1,5 +1,5 @@
 import { RealizedScheduleTime, RealizedTimeContainer, ScheduleClinicContainer, ScheduleContainer, ScheduleTime } from "../ScheduleCard/Styles";
-import { CardClinicContainer, CardClinicContent, CardContainer, CardContainerText, CardLinkText, RealizedCardLinkText } from "./Style";
+import { CardClinicContainer, CardClinicContent, CardContainer, CardContainerText, CardLinkText, CardMedicSelectContainer, RealizedCardLinkText } from "./Style";
 import { SubTitleCard, SubTitleCardAge, SubTitleCardScore, SubTitleClinicCard, SubTitleMedicCard } from "../SubTitle/Styles";
 import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
@@ -7,7 +7,7 @@ import { TitleCard } from "../Title/Styles";
 import { ModalAppointment } from "../Modal/Modal";
 import { useState } from "react";
 
-export const AppointmentCard = ({ id, img, name, age, query, schedule, email, situation}) => {
+export const AppointmentCard = ({ id, img, name, age, query, schedule, email, situation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <CardContainer>
@@ -63,35 +63,36 @@ export const AppointmentCard = ({ id, img, name, age, query, schedule, email, si
     )
 }
 
-
-export const ClinicSelectCard = ({ id, clinicName, onPress, select, score, city, uf, days }) => {
+export const ClinicSelectCard = ({ id, clinicName, onPress, isSelect = false, score, city, uf, days }) => {
     return (
-        <CardClinicContainer clickButton={select} onPress={onPress}>
+        <CardClinicContainer isSelect={isSelect} onPress={onPress}>
             <>
-            <CardClinicContent>
-                <TitleCard>{clinicName}</TitleCard>
-                <SubTitleCardScore><AntDesign name="star" size={16} color="#F9A620" />{score}</SubTitleCardScore>
-            </CardClinicContent>
+                <CardClinicContent>
+                    <TitleCard>{clinicName}</TitleCard>
+                    <SubTitleCardScore><AntDesign name="star" size={16} color="#F9A620" />{score}</SubTitleCardScore>
+                </CardClinicContent>
 
-            <CardClinicContent>
-                <SubTitleClinicCard>{city}, {uf}</SubTitleClinicCard>
-                <ScheduleClinicContainer>
-                    <ScheduleTime><MaterialCommunityIcons name="calendar-outline" size={16} color="#49B3BA" /> {days}</ScheduleTime>
-                </ScheduleClinicContainer>
-            </CardClinicContent>
+                <CardClinicContent>
+                    <SubTitleClinicCard>{city}, {uf}</SubTitleClinicCard>
+                    <ScheduleClinicContainer>
+                        <ScheduleTime><MaterialCommunityIcons name="calendar-outline" size={16} color="#49B3BA" /> {days}</ScheduleTime>
+                    </ScheduleClinicContainer>
+                </CardClinicContent>
             </>
         </CardClinicContainer>
     )
 }
 
-export const MedicSelectCard = ({id, img, medicName, speciality}) => {
-    return(
-        <CardContainer>
-            <UserProfilePhotoCard source={img} />
-            <CardContainerText>
-                <TitleCard>{medicName}</TitleCard>
-                <SubTitleMedicCard>{speciality}</SubTitleMedicCard>
-            </CardContainerText>
-        </CardContainer>
+export const MedicSelectCard = ({ id, img, medicName, onPress, isSelect = false, speciality }) => {
+    return (
+        <CardMedicSelectContainer isSelect={isSelect} onPress={onPress}>
+            <>
+                <UserProfilePhotoCard source={img} />
+                <CardContainerText>
+                    <TitleCard>{medicName}</TitleCard>
+                    <SubTitleMedicCard>{speciality}</SubTitleMedicCard>
+                </CardContainerText>
+            </>
+        </CardMedicSelectContainer>
     )
 }

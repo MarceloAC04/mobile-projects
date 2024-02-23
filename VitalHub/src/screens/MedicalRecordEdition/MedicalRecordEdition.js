@@ -1,11 +1,11 @@
-import { Button, ButtonTitle } from "../../components/Button/Styles";
-import { SecondaryButton, SecondaryButtonText } from "../../components/SecondaryButton/Styles";
 import { Container, ContainerScrollView } from "../../components/Container/Styles";
 import { LabelText } from "../../components/LabelText/Styles";
 import { SubTitle } from "../../components/SubTitle/Styles";
 import { Title } from "../../components/Title/Styles";
 import { UserProfileInputContainer, UserProfileInputEdition, UserProfileTextAreaEdition } from "../../components/UserProfileInput/Styles";
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles";
+import { ButtonEnter } from "../../components/Button/Button";
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton";
 
 
 
@@ -46,13 +46,15 @@ export const MedicalRecordEdition = ({navigation}) => {
                     />
                 </UserProfileInputContainer>
 
-                <Button onPress={() => navigation.navigate("MedicalRecord")}>
-                    <ButtonTitle>Salvar</ButtonTitle>
-                </Button>
+                <ButtonEnter
+                    onPress={() => navigation.navigate("MedicalRecord")}
+                    placeholder={'Salvar'}
+                />
 
-                <SecondaryButton onPress={() => navigation.navigate("MedicalRecord")}>
-                    <SecondaryButtonText>Cancelar</SecondaryButtonText>
-                </SecondaryButton>
+                <ButtonSecondary 
+                    onPress={() => navigation.navigate("MedicalRecord")}
+                />
+                
 
             </Container>
         </ContainerScrollView>

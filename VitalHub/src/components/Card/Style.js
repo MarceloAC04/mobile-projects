@@ -13,12 +13,6 @@ export const CardContainer = styled.View`
     border-radius: 5px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
     position: relative;
-
-    ${props => props.onPress ? css`
-        border: 2px solid #496BBA;
-    ` : css`
-    border: none;
-    `}
 `
 
 export const CardContainerText = styled.View`
@@ -37,7 +31,6 @@ export const CardLinkText = styled.Text`
 export const RealizedCardLinkText = styled(CardLinkText)`
     color: #344F8F;
 `
-
 export const CardClinicContainer = styled.TouchableHighlight.attrs({
     underlayColor: 'transparent'
 })`
@@ -53,7 +46,7 @@ export const CardClinicContainer = styled.TouchableHighlight.attrs({
     border-radius: 5px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
 
-    ${props => props.clickButton === true ? css`
+    ${props => props.isSelect === true ? css`
         border: 2px solid #496BBA;
     ` : css`
     border: none;
@@ -63,4 +56,14 @@ export const CardClinicContent = styled.View`
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+`
+export const CardMedicSelectContainer = styled(CardClinicContainer)`
+    height: 102px;
+    background-color: #FFF;
+    margin-top: 12px;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    gap: 10px;
+    padding: 12px 20px 12px 12px;
 `

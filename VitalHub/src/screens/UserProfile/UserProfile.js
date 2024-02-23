@@ -5,6 +5,7 @@ import { Title } from "../../components/Title/Styles"
 import { UserProfileInput, UserProfileInputAddress, UserProfileInputContainer, UserProfileInputContainerAddress, UserProfileInputContainerRow } from "../../components/UserProfileInput/Styles"
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
 import {Button, ButtonTitle} from '../../components/Button/Styles'
+import { ButtonEnter } from "../../components/Button/Button"
 
 
 export const UserProfile = () => {
@@ -44,13 +45,14 @@ export const UserProfile = () => {
                     </UserProfileInputContainerAddress>
                 </UserProfileInputContainerRow>
 
-                <Button>
-                    <ButtonTitle>Salvar</ButtonTitle>
-                </Button>
+                <ButtonEnter
+                    placeholder={'salvar'}
+                />
 
-                <Button>
-                    <ButtonTitle>Editar</ButtonTitle>
-                </Button>
+                <ButtonEnter
+                    placeholder={'editar'}
+                />
+
             </Container>
         </ContainerScrollView>
     )

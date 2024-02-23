@@ -5,6 +5,7 @@ import { Logo } from "../../components/Logo/Styles"
 import { Input } from "../../components/Input/Styles"
 import { Button, ButtonTitle } from "../../components/Button/Styles"
 import { AntDesign } from '@expo/vector-icons';
+import { ButtonEnter } from "../../components/Button/Button"
 
 
 export const ResetPassword = ({navigation}) => {
@@ -23,9 +24,10 @@ export const ResetPassword = ({navigation}) => {
 
             <Input placeholder={'Confirme nova senha'} secureTextEntry />
 
-            <Button onPress={() => navigation.navigate('Login')}>
-                <ButtonTitle>Confirmar nova senha</ButtonTitle>
-            </Button>
+            <ButtonEnter
+                onPress={() => navigation.navigate('Login')}
+                placeholder={'confirmar nova senha'}
+            />
         </Container>
     )
 }

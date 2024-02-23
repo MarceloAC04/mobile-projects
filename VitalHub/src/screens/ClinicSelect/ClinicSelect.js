@@ -1,8 +1,8 @@
 import { Container } from "../../components/Container/Styles"
 import { Title } from "../../components/Title/Styles"
 import { ClinicCardList } from "../../components/CardList/CardList"
-import { Button, ButtonTitle } from "../../components/Button/Styles"
-import { SecondaryButton, SecondaryButtonText } from "../../components/SecondaryButton/Styles"
+import { ButtonEnter } from "../../components/Button/Button"
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 
 const clinicCards = [
     {id: 1, clinicName: 'Clínica Natureh', score: '4,5', city: 'São Paulo', uf: 'SP', days: 'Seg-Sex', select: true},
@@ -21,13 +21,11 @@ export const ClinicSelect = () => {
                 cardsData={clinicCards}
             />
 
-            <Button>
-                <ButtonTitle>Confirmar</ButtonTitle>
-            </Button>
-
-            <SecondaryButton>
-                <SecondaryButtonText>Cancelar</SecondaryButtonText>
-            </SecondaryButton>
+            <ButtonEnter 
+                placeholder={'confirmar'}
+            />
+           
+           <ButtonSecondary />
         </Container>
     )
 }

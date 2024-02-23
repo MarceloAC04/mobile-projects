@@ -1,18 +1,18 @@
 import { ModalContainer, ModalScheduleView, ModalMedicalRecordContainer, ModalMedicalRecordView, ModalView, ModalScheduleContainer, ModalScheduleAppointmentFormContainer } from "./Styles";
-import { SecondaryButton, SecondaryButtonText } from "../SecondaryButton/Styles";
 import { SubTitle, SubTitleContainerModal } from "../SubTitle/Styles";
 import { UserProfilePhotoModal } from "../UserProfilePhoto/Styles";
 import { AppointmentLevelButton } from "../StatusButton/StatusButton";
-import { Button, ButtonTitle, ModalAppointmentButton, ModalButton } from "../Button/Styles";
 import { Title } from "../Title/Styles";
 import { Modal } from "react-native";
 import { LabelText } from "../LabelText/Styles";
 import { useState } from "react";
 import { AppointmentLevelButtonContainer } from "../StatusButton/Styles";
 import { ScheduleAppointmentContainer, ScheduleAppointmentInput } from "../ModalAppointmentInput/Styles";
+import { ButtonEnter, ButtonModalAppointment } from "../Button/Button";
+import { ButtonSecondary } from "../SecondaryButton/SecondaryButton";
 
 
-export const ModalAppointment = ({id, animation, transparent, visible, onPress, img, name, age, email, situation }) => {
+export const ModalAppointment = ({ id, animation, transparent, visible, onPress, img, name, age, email, situation }) => {
     return (
         <Modal
             animationType={animation}
@@ -26,12 +26,12 @@ export const ModalAppointment = ({id, animation, transparent, visible, onPress, 
                         <SubTitleContainerModal>
                             <SubTitle>Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?</SubTitle>
                         </SubTitleContainerModal>
-                        <Button>
-                            <ButtonTitle>Confirmar</ButtonTitle>
-                        </Button>
-                        <SecondaryButton onPress={onPress}>
-                            <SecondaryButtonText>Cancelar</SecondaryButtonText>
-                        </SecondaryButton>
+                        <ButtonEnter
+                            placeholder={'Confirmar'}
+                        />
+                        <ButtonSecondary
+                            onPress={onPress}
+                        />
                     </ModalContainer>
 
                 </ModalView>
@@ -41,12 +41,12 @@ export const ModalAppointment = ({id, animation, transparent, visible, onPress, 
                         <UserProfilePhotoModal source={img} />
                         <Title>{name}</Title>
                         <SubTitle>{age}   <SubTitle>{email}</SubTitle></SubTitle>
-                        <Button>
-                            <ButtonTitle>Inserir Prontuário</ButtonTitle>
-                        </Button>
-                        <SecondaryButton onPress={onPress}>
-                            <SecondaryButtonText>Cancelar</SecondaryButtonText>
-                        </SecondaryButton>
+                        <ButtonEnter
+                            placeholder={'Confirmar'}
+                        />
+                        <ButtonSecondary
+                            onPress={onPress}
+                        />
                     </ModalMedicalRecordContainer>
                 </ModalMedicalRecordView>
             )}
@@ -54,10 +54,10 @@ export const ModalAppointment = ({id, animation, transparent, visible, onPress, 
     )
 }
 
-export const ModalScheduleAppointment = ({ animation, transparent, visible, onPress, ...rest  }) => {
+export const ModalScheduleAppointment = ({ animation, transparent, visible, onPress, ...rest }) => {
     const [statusAppoinment, setStatusAppoinment] = useState("");
     return (
-        <Modal {...rest }
+        <Modal {...rest}
             animationType={animation}
             transparent={transparent}
             visible={visible}
@@ -96,15 +96,15 @@ export const ModalScheduleAppointment = ({ animation, transparent, visible, onPr
                                 placeholder={'Informe a localização'}
                             />
                         </ScheduleAppointmentContainer>
-                        <ModalAppointmentButton>
-                            <ButtonTitle>Continuar</ButtonTitle>
-                        </ModalAppointmentButton>
+                        <ButtonModalAppointment
+                            placeholder={'confirmar'}
+                        />
                     </ModalScheduleAppointmentFormContainer>
 
 
-                    <SecondaryButton onPress={onPress}>
-                        <SecondaryButtonText>Cancelar</SecondaryButtonText>
-                    </SecondaryButton>
+                    <ButtonSecondary
+                        onPress={onPress}
+                    />
                 </ModalScheduleContainer>
             </ModalScheduleView>
         </Modal>

@@ -1,3 +1,4 @@
+import { ButtonEnter } from "../../components/Button/Button"
 import { Button, ButtonTitle } from "../../components/Button/Styles"
 import { Container, ContainerIcons } from "../../components/Container/Styles"
 import { Input } from "../../components/Input/Styles"
@@ -24,9 +25,10 @@ export const Reset = ({navigation}) => {
 
             <Input placeholder={'Usuário ou E-mail'} />
 
-            <Button onPress={() => navigation.navigate('EmailCode')}>
-                <ButtonTitle>Continuar</ButtonTitle>
-            </Button>
+            <ButtonEnter
+                onPress={() => navigation.navigate('EmailCode')} 
+                placeholder={'continuar'}
+            />
         </Container>
     )
 }

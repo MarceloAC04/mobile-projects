@@ -26,6 +26,7 @@ export const CardList = ({ status, cardsData }) => {
 }
 
 export const ClinicCardList = ({ cardsData }) => {
+    const [idClinic, setIdClinic] = useState(null)
     return (
         <ListCard
             data={cardsData}
@@ -33,6 +34,8 @@ export const ClinicCardList = ({ cardsData }) => {
             renderItem={({ item }) =>
                 <ClinicSelectCard
                     id={item.id}
+                    onPress={() => setIdClinic(item.id)}
+                    isSelect={idClinic == item.id}
                     clinicName={item.clinicName}
                     score={item.score}
                     city={item.city}
@@ -46,6 +49,7 @@ export const ClinicCardList = ({ cardsData }) => {
 }
 
 export const MedicSelectCardList = ({ cardsData }) => {
+    const [idMedic, setIdMedic] = useState(null)
     return (
         <ListCard
             data={cardsData}
@@ -53,6 +57,8 @@ export const MedicSelectCardList = ({ cardsData }) => {
             renderItem={({ item }) =>
                 <MedicSelectCard
                     id={item.id}
+                    onPress={() => setIdMedic(item.id)}
+                    isSelect={idMedic == item.id}
                     img={item.img}
                     medicName={item.medicName}
                     speciality={item.speciality}

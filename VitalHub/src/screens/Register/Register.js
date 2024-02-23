@@ -1,11 +1,10 @@
-import { Text, View } from "react-native"
 import { Container } from "../../components/Container/Styles"
 import { Logo } from "../../components/Logo/Styles"
 import { Title } from "../../components/Title/Styles"
 import {SubTitle} from '../../components/SubTitle/Styles'
 import { Input } from "../../components/Input/Styles"
-import { Button, ButtonTitle } from "../../components/Button/Styles"
-import { SecondaryButton, SecondaryButtonText } from "../../components/SecondaryButton/Styles"
+import { ButtonEnter } from "../../components/Button/Button"
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 
 export const Register = ({navigation}) => {
     return(
@@ -22,13 +21,14 @@ export const Register = ({navigation}) => {
 
             <Input placeholder={'Confirmar Senha'} secureTextEntry/>
 
-            <Button>
-                <ButtonTitle>CADASTRAR</ButtonTitle>
-            </Button>
+            <ButtonEnter 
+                placeholder={'cadastrar'}
+                onPress={() => navigation.navigate('EmailCode')}
+            />
 
-            <SecondaryButton>
-                <SecondaryButtonText onPress={() => navigation.navigate('Login')}>Cancelar</SecondaryButtonText>
-            </SecondaryButton>
+          <ButtonSecondary
+                onPress={() => navigation.navigate('Login')}
+          />
         </Container>
     )
 }

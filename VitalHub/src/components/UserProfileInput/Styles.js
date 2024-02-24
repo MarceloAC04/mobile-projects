@@ -12,8 +12,8 @@ export const UserProfileInput = styled.TextInput.attrs({
     font-family: 'MontserratAlternates_500Medium';
     color: #33303E;
     background-color: #F5F3F3;
-    /* border: 2px solid black; */
     height: 53px;
+    width: 100%;
     border-radius: 5px;
     padding: 16px;
     font-size: 14px;
@@ -24,7 +24,7 @@ export const UserProfileTextArea = styled(UserProfileInput).attrs({
 })`
     font-family: 'MontserratAlternates_600SemiBold';
     height: 120px;
-    width: 90%;
+    width: 100%;
     text-align: justify;
     font-size: 14px;
     vertical-align: top;
@@ -38,7 +38,7 @@ export const UserProfileTextAreaEdition = styled(UserProfileInput).attrs({
     background-color: transparent;
     border: 2px solid #49b3ba;
     height: 120px;
-    width: 90%;
+    width: 100%;
     vertical-align: top;
     
 `

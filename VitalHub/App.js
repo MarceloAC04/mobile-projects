@@ -25,6 +25,8 @@ import { MedicalRecordEdition } from './src/screens/MedicalRecordEdition/Medical
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
 import { MedicSelect } from './src/screens/MedicSelect/MedicSelect';
+import { DateSelect } from './src/screens/DateSelect/DateSelect';
+import { MedicRecord } from './src/screens/MedicRecord/MedicRecord';
 
 
 export default function App() {
@@ -134,6 +136,18 @@ export default function App() {
           name='MedicSelect'
           component={MedicSelect}
           options={{title: 'MedicSelect'}}
+        />
+
+        <Stack.Screen
+          name='DateSelect'
+          component={DateSelect}
+          options={{title: 'DateSelect'}}
+        />
+
+        <Stack.Screen
+          name='MedicRecord'
+          component={MedicRecord}
+          options={{title: 'MedicRecord'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

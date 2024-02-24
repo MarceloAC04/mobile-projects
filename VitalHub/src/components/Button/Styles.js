@@ -33,3 +33,10 @@ export const ModalAppointmentButton = styled(Button)`
     width: 100%;
     margin-top: 30px;
 `
+
+export const ButtonMedicRecord = styled(Button)`
+    width: 60%;
+    height: 44px;
+    background-color: #49B3BA;
+    align-items: center;
+`

@@ -7,6 +7,16 @@ import { Reset } from './src/screens/Reset/Reset';
 import { HomePatient } from './src/screens/HomePatient/HomePatient'
 import { Register } from './src/screens/Register/Register';
 import {ConsultationLocation} from './src/screens/ConsultationLocation/ConsultationLocation'
+import {Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
+import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
+import { EmailCode } from './src/screens/EmailCode/EmailCode';
+import { UserProfile } from './src/screens/UserProfile/UserProfile';
+import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
+import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
+import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
+import { MedicSelect } from './src/screens/MedicSelect/MedicSelect';
+import { DateSelect } from './src/screens/DateSelect/DateSelect';
+import { MedicRecord } from './src/screens/MedicRecord/MedicRecord';
 
 //Instancia do stack navigator
 const Stack = createNativeStackNavigator();
@@ -16,17 +26,6 @@ import { useFonts, MontserratAlternates_600SemiBold,
   MontserratAlternates_700Bold,
  } from '@expo-google-fonts/montserrat-alternates';
 
-import {Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
-import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
-import { EmailCode } from './src/screens/EmailCode/EmailCode';
-import { UserProfile } from './src/screens/UserProfile/UserProfile';
-import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
-import { MedicalRecordEdition } from './src/screens/MedicalRecordEdition/MedicalRecordEdition';
-import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
-import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
-import { MedicSelect } from './src/screens/MedicSelect/MedicSelect';
-import { DateSelect } from './src/screens/DateSelect/DateSelect';
-import { MedicRecord } from './src/screens/MedicRecord/MedicRecord';
 
 
 export default function App() {
@@ -107,12 +106,6 @@ export default function App() {
           name='HomeMedic'
           component={HomeMedic}
           options={{title: 'HomeMedic'}}
-        />
-
-        <Stack.Screen
-          name='MedicalRecordEdition'
-          component={MedicalRecordEdition}
-          options={{title: 'MedicalRecordEdition'}}
         />
 
         <Stack.Screen

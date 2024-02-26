@@ -4,8 +4,7 @@ import { SubTitle } from "../../components/SubTitle/Styles"
 import { Title } from "../../components/Title/Styles"
 import { UserProfileInput, UserProfileInputAddress, UserProfileInputContainer, UserProfileInputContainerAddress, UserProfileInputContainerRow } from "../../components/UserProfileInput/Styles"
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
-import {Button, ButtonTitle} from '../../components/Button/Styles'
-import { ButtonEnter } from "../../components/Button/Button"
+import { ButtonEnter, ButtonGrey } from "../../components/Button/Button"
 
 
 export const UserProfile = () => {
@@ -53,6 +52,9 @@ export const UserProfile = () => {
                     placeholder={'editar'}
                 />
 
+                <ButtonGrey 
+                    placeholder={'Sair do app'}
+                />
             </Container>
         </ContainerScrollView>
     )

@@ -42,5 +42,16 @@ export const SubTitleCardScore = styled.Text`
 `
 export const SubTitleMedicCard = styled(SubTitleCard)`
     font-size: 14px;
-    font-family: 'Quicksand_500Medium'
+    font-family: 'Quicksand_500Medium';
+`
+
+export const SubTitleModalConfirm = styled(SubTitle)`
+    color: #000000;
+    width: 80%;
+`
+
+export const SubTitleModalConfirmLabel = styled.Text`
+    font-size: 14px;
+    font-family: 'Quicksand_500Medium';
+    color: #4E4B59;
 `

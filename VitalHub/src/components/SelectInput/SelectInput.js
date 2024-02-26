@@ -1,10 +1,17 @@
 import SelectDropdown from "react-native-select-dropdown"
+import RNPickerSelect from "react-native-picker-select"
 import { AntDesign } from '@expo/vector-icons';
 import { LabelText } from "../LabelText/Styles"
 import { StyleSheet, View } from "react-native";
 
+const dataTime = [
+    { label: '13:00', value: '13:00' },
+    { label: '14:00', value: '14:00' },
+    { label: '15:00', value: '15:00' },
+    { label: '16:00', value: '16:00' },
+]
 
-export const SelectInput = ({textInput, textLabel }) => {
+export const SelectInput = ({ textInput, textLabel }) => {
     return (
         <View style={styles.container}>
             <LabelText>{textLabel}</LabelText>
@@ -23,6 +30,41 @@ export const SelectInput = ({textInput, textLabel }) => {
     )
 }
 
+export const SelectInputPicker = ({ textInput, textLabel }) => {
+    return (
+        <View style={styles.container}>
+            <LabelText>{textLabel}</LabelText>
+            <RNPickerSelect
+                onValueChange={(value) => console.log(value)}
+                items={dataTime}
+                placeholder={{ label: textInput, value: null }}
+                Icon={() => <AntDesign name="caretdown" size={24} color="#34898F" />}
+                style={{
+                    viewContainer: {
+                        justifyContent: 'center',
+                        borderColor: '#60BFC5',
+                        borderWidth: 2,
+                        borderRadius: 5,
+                        height: 53,
+                        paddingLeft: 16,
+                    },
+                    iconContainer: {
+                        bottom: 0,
+                        right: 13
+                    },
+                    ...styles,
+                    placeholder: {
+                        color: '#34898F',
+                        fontSize: 16,
+                        fontFamily: 'MontserratAlternates_600SemiBold',
+                        textAlign: 'justify'
+                    }
+                }}
+            />
+        </View>
+    )
+}
+
 const styles = StyleSheet.create({
     container: {
         width: '90%',
@@ -30,17 +72,12 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         gap: 10,
     },
-    button: {
-        backgroundColor: 'transparent',
-        borderRadius: 8,
-        borderColor: '#60BFC5',
-        borderWidth: 2,
-        width: '100%',
-        height: 54,
-        paddingLeft: 16,
-        paddingRight: 16
+    inputIOS: {
+        color: '#34898F',
+        fontSize: 16,
+        fontFamily: 'MontserratAlternates_600SemiBold'
     },
-    buttonText: {
+    inputAndroid: {
         color: '#34898F',
         fontSize: 16,
         fontFamily: 'MontserratAlternates_600SemiBold',

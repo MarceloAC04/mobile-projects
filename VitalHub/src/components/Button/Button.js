@@ -1,4 +1,4 @@
-import { Button, ButtonMedicRecord, ButtonTitle, ButtonTitleGoogle, GoogleButton, ModalAppointmentButton } from "./Styles"
+import { Button, ButtonMedicRecord, ButtonTitle, ButtonTitleGoogle, GoogleButton, GreyButton, ModalAppointmentButton, ModalConfirmAppointmentButton } from "./Styles"
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 
 
@@ -7,6 +7,14 @@ export const ButtonEnter = ({ onPress, placeholder }) => {
         <Button onPress={onPress}>
             <ButtonTitle>{placeholder}</ButtonTitle>
         </Button>
+    )
+}
+
+export const ButtonGrey = ({ onPress, placeholder }) => {
+    return (
+        <GreyButton onPress={onPress}>
+            <ButtonTitle>{placeholder}</ButtonTitle>
+        </GreyButton>
     )
 }
 
@@ -27,10 +35,18 @@ export const ButtonModalAppointment = ({onPress, placeholder}) => {
     )
 }
 
+export const ButtonModalConfirmAppointment = ({onPress, placeholder}) => {
+    return (
+        <ModalConfirmAppointmentButton onPress={onPress}>
+            <ButtonTitle>{placeholder}</ButtonTitle>
+        </ModalConfirmAppointmentButton>
+    )
+}
+
 export const MedicRecordButton = ({onPress, placeholder}) => {
     return(
         <ButtonMedicRecord onPress={onPress}>
-            <ButtonTitle><MaterialCommunityIcons name="camera-plus-outline" size={24} color="white" / >  {placeholder}</ButtonTitle>
+            <ButtonTitle><MaterialCommunityIcons name="camera-plus-outline" size={24} color="white"/>  {placeholder}</ButtonTitle>
         </ButtonMedicRecord>
     )
 }

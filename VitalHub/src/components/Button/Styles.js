@@ -11,6 +11,11 @@ export const Button = styled.TouchableOpacity`
     padding: 8px 12px 8px 12px;
 `
 
+export const GreyButton = styled(Button)`
+    width: 50%;
+    background-color: #ACABB7;
+`
+
 export const ButtonTitle = styled.Text`
     font-size: 16px;
     color: #FFFFFF;
@@ -31,6 +36,10 @@ export const ButtonTitleGoogle = styled(ButtonTitle)`
 
 export const ModalAppointmentButton = styled(Button)`
     width: 100%;
+    margin-top: 30px;
+`
+export const ModalConfirmAppointmentButton = styled(Button)`
+    width: 80%;
     margin-top: 30px;
 `
 

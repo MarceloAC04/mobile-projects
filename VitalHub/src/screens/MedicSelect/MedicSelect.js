@@ -11,7 +11,7 @@ const medicCards = [
 ]
 
 
-export const MedicSelect = () => {
+export const MedicSelect = ({navigation}) => {
     return (
         <Container>
             <Title>Selecionar Médico</Title>
@@ -22,9 +22,12 @@ export const MedicSelect = () => {
             
             <ButtonEnter
                 placeholder={'confirmar'}
+                onPress={() => navigation.navigate("DateSelect")}
             />
 
-            <ButtonSecondary />
+            <ButtonSecondary 
+                onPress={() => navigation.navigate("HomePatient")}
+            />
         </Container>
     )
 }

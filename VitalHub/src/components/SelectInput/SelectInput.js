@@ -39,27 +39,7 @@ export const SelectInputPicker = ({ textInput, textLabel }) => {
                 items={dataTime}
                 placeholder={{ label: textInput, value: null }}
                 Icon={() => <AntDesign name="caretdown" size={24} color="#34898F" />}
-                style={{
-                    viewContainer: {
-                        justifyContent: 'center',
-                        borderColor: '#60BFC5',
-                        borderWidth: 2,
-                        borderRadius: 5,
-                        height: 53,
-                        paddingLeft: 16,
-                    },
-                    iconContainer: {
-                        bottom: 0,
-                        right: 13
-                    },
-                    ...styles,
-                    placeholder: {
-                        color: '#34898F',
-                        fontSize: 16,
-                        fontFamily: 'MontserratAlternates_600SemiBold',
-                        textAlign: 'justify'
-                    }
-                }}
+                style={{...styles}}
             />
         </View>
     )
@@ -82,5 +62,23 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'MontserratAlternates_600SemiBold',
         textAlign: 'left'
+    },
+    viewContainer: {
+        justifyContent: 'center',
+        borderColor: '#60BFC5',
+        borderWidth: 2,
+        borderRadius: 5,
+        height: 53,
+        paddingLeft: 16,
+    },
+    iconContainer: {
+        bottom: 0,
+        right: 13
+    },
+    placeholder: {
+        color: '#34898F',
+        fontSize: 16,
+        fontFamily: 'MontserratAlternates_600SemiBold',
+        textAlign: 'justify'
     }
 });

@@ -1,13 +1,26 @@
-import { RealizedScheduleTime, RealizedTimeContainer, ScheduleClinicContainer, ScheduleContainer, ScheduleTime } from "../ScheduleCard/Styles";
-import { CardClinicContainer, CardClinicContent, CardContainer, CardContainerText, CardLinkText, CardMedicSelectContainer, RealizedCardLinkText } from "./Style";
+import {
+    RealizedScheduleTime,
+    RealizedTimeContainer,
+    ScheduleClinicContainer,
+    ScheduleContainer,
+    ScheduleTime } from "../ScheduleCard/Styles";
+import {
+    CardClinicContainer,
+    CardClinicContent,
+    CardContainer,
+    CardContainerText,
+    CardLinkText,
+    CardMedicContainer,
+    CardMedicSelectContainer,
+    RealizedCardLinkText } from "./Style";
 import { SubTitleCard, SubTitleCardAge, SubTitleCardScore, SubTitleClinicCard, SubTitleMedicCard } from "../SubTitle/Styles";
-import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
+import { ModalAppointment, ModalLocalAppointment } from "../Modal/Modal";
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
+import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
 import { TitleCard } from "../Title/Styles";
-import { ModalAppointment } from "../Modal/Modal";
 import { useState } from "react";
 
-export const AppointmentCard = ({ id, img, name, age, query, schedule, email, situation }) => {
+export const AppointmentCard = ({ id, img, name, age, query, onPressModal, schedule, email, situation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <CardContainer>
@@ -60,6 +73,76 @@ export const AppointmentCard = ({ id, img, name, age, query, schedule, email, si
                 </>
             ) : (<CardLinkText>           </CardLinkText>)}
         </CardContainer >
+    )
+}
+
+export const AppointmentMedicCard = ({ id, img, name, age, query, crm, specialty, schedule, email, situation }) => {
+    const [modalVisible, setModalVisible] = useState(false);
+    const [modalLocalVisible, setModalLocalVisible] = useState(false);
+    return (
+        <CardMedicContainer onPress={() => setModalLocalVisible(true)}>
+            <>
+                <UserProfilePhotoCard source={img} />
+                <CardContainerText>
+                    <TitleCard>{name}</TitleCard>
+                    <SubTitleCardAge>{age}  <SubTitleCard>{query}</SubTitleCard></SubTitleCardAge>
+                    <ModalLocalAppointment
+                        visible={modalLocalVisible}
+                        onPressCancel={() => setModalLocalVisible(false)}
+                        animation={'fade'}
+                        transparent={true}
+                        id={id}
+                        img={img}
+                        name={name}
+                        crm={crm}
+                        specialty={specialty}
+                    />
+                    {situation == 'pendente' ? (
+                        <ScheduleContainer>
+                            <ScheduleTime> <AntDesign name="clockcircle" size={14} color="#49B3BA" />  {schedule}</ScheduleTime>
+                        </ScheduleContainer>
+                    ) : (
+                        <RealizedTimeContainer>
+                            <RealizedScheduleTime> <AntDesign name="clockcircle" size={14} color="#4E4B59" />  {schedule}</RealizedScheduleTime>
+                        </RealizedTimeContainer>
+                    )}
+                </CardContainerText>
+                {situation == 'pendente' ? (
+                    <>
+                        <CardLinkText onPress={() => setModalVisible(true)}> Cancelar </CardLinkText>
+                        <ModalAppointment
+                            visible={modalVisible}
+                            onPress={() => setModalVisible(false)}
+                            animation={'fade'}
+                            transparent={true}
+                            id={id}
+                            img={img}
+                            name={name}
+                            age={age}
+                            email={email}
+                            situation={situation}
+                        />
+                    </>
+                ) : (null)}
+                {situation == 'realizada' ? (
+                    <>
+                        <RealizedCardLinkText onPress={() => setModalVisible(true)}>Ver Prontuário</RealizedCardLinkText>
+                        <ModalAppointment
+                            visible={modalVisible}
+                            onPress={() => setModalVisible(false)}
+                            animation={'fade'}
+                            transparent={true}
+                            id={id}
+                            img={img}
+                            name={name}
+                            age={age}
+                            email={email}
+                            situation={situation}
+                        />
+                    </>
+                ) : (<CardLinkText>           </CardLinkText>)}
+            </>
+        </CardMedicContainer >
     )
 }
 

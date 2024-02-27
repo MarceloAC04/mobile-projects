@@ -38,9 +38,9 @@ LocaleConfig.defaultLocale = 'pt-br'
 export const CalendarSchedule = () => {
   const [select, setSelect] = useState(currentDate)
 
-  const onDayPress = useCallback((day) => {
+  const onDayPress = (day => {
     setSelect(day.dateString);
-  }, []);
+  });
 
   const marked = useMemo(() => {
     return {
@@ -68,8 +68,8 @@ export const CalendarSchedule = () => {
         textDisabledColor: '#d9e1e8',
         monthTextColor: '#4E4B59',
         textMonthFontFamily: 'MontserratAlternates_600SemiBold',
-        textDayHeaderFontFamily: 'MontserratAlternates_600SemiBold',
-        textDayFontFamily: 'MontserratAlternates_600SemiBold',
+        textDayHeaderFontFamily: 'Quicksand_600SemiBold',
+        textDayFontFamily: 'Quicksand_600SemiBold',
         textDayFontSize: 14,
         textMonthFontSize: 20,
         textDayHeaderFontSize: 14

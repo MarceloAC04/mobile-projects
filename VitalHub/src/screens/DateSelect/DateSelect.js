@@ -9,24 +9,18 @@ import { Title } from "../../components/Title/Styles"
 
 
 
-export const DateSelect = () => {
+export const DateSelect = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <Container>
             <Title>Selecionar data</Title>
 
-            <CalendarSchedule />
-
-            {/* <SelectInput 
-                textLabel={'Selecione um horário disponível'}
-                textInput={'Selecionar horário'}
-            /> */}
+            <CalendarSchedule/>
 
             <SelectInputPicker
                 textLabel={'Selecione um horário disponível'}
                 textInput={'Selecionar horário'}
             />
-
 
             <ButtonEnter
                 onPress={() => setModalVisible(true)}
@@ -36,9 +30,16 @@ export const DateSelect = () => {
             <ModalConfirmAppointment
                 visible={modalVisible}
                 animation={'fade'}
+                onPressConfirm={() => {
+                    setModalVisible(false)
+                    navigation.navigate("HomePatient")
+                }}
                 onPressCancel={() => setModalVisible(false)}
             />
-            <ButtonSecondary/>
+
+            <ButtonSecondary
+                onPress={() => navigation.navigate("HomePatient")}
+            />
         </Container>
     )
 }

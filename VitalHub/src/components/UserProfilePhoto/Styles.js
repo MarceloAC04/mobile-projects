@@ -6,7 +6,6 @@ export const UserProfilePhoto = styled.Image`
     margin-bottom: 20px;
     
 `
-
 export const UserProfilePhotoHeader = styled(UserProfilePhoto)`
     width: 70px;
     height: 70px;

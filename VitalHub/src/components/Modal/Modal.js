@@ -64,7 +64,7 @@ export const ModalAppointment = ({ id, animation, transparent, visible, onPress,
     )
 }
 
-export const ModalScheduleAppointment = ({ animation, transparent, visible, onPress, ...rest }) => {
+export const ModalScheduleAppointment = ({ animation, transparent, visible, onPressConfirm, onPressCancel, ...rest }) => {
     const [statusAppoinment, setStatusAppoinment] = useState("");
     return (
         <Modal {...rest}
@@ -106,14 +106,16 @@ export const ModalScheduleAppointment = ({ animation, transparent, visible, onPr
                                 placeholder={'Informe a localização'}
                             />
                         </ScheduleAppointmentContainer>
-                        <ButtonModalAppointment
-                            placeholder={'confirmar'}
-                        />
                     </ModalScheduleAppointmentFormContainer>
+
+                    <ButtonModalAppointment
+                        onPress={onPressConfirm}
+                        placeholder={'confirmar'}
+                    />
 
 
                     <ButtonSecondary
-                        onPress={onPress}
+                        onPress={onPressCancel}
                     />
                 </ModalScheduleContainer>
             </ModalScheduleView>
@@ -165,6 +167,30 @@ export const ModalConfirmAppointment = ({ animation, transparent, visible, onPre
                     />
                 </ModalConfirmAppointmentContainer>
             </ModalView>
+        </Modal>
+    )
+}
+
+export const ModalLocalAppointment = ({ animation, transparent, onPressConfirm, onPressCancel, visible, img, specialty, crm, name, ...rest }) => {
+    return (
+        <Modal  {...rest}
+            animationType={animation}
+            transparent={transparent}
+            visible={visible}>
+            <ModalMedicalRecordView>
+                <ModalMedicalRecordContainer>
+                    <UserProfilePhotoModal source={img} />
+                    <Title>{name}</Title>
+                    <SubTitle>{specialty}   <SubTitle>{crm}</SubTitle></SubTitle>
+                    <ButtonEnter
+                        onPress={onPressConfirm}
+                        placeholder={'Confirmar'}
+                    />
+                    <ButtonSecondary
+                        onPress={onPressCancel}
+                    />
+                </ModalMedicalRecordContainer>
+            </ModalMedicalRecordView>
         </Modal>
     )
 }

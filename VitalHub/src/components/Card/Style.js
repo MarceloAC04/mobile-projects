@@ -15,6 +15,23 @@ export const CardContainer = styled.View`
     position: relative;
 `
 
+export const CardMedicContainer = styled.TouchableHighlight.attrs({
+    underlayColor: 'transparent'
+})`
+    width: 320px;
+    height: 102px;
+    background-color: #FFF;
+    margin-top: 12px;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    gap: 10px;
+    padding: 12px 20px 12px 12px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+`
+
 export const CardContainerText = styled.View`
     height: 90%;
     justify-content: center;

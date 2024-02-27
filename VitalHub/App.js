@@ -1,22 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Navegation } from './src/screens/Navegation/Navegation';
-import { Login } from './src/screens/Login/Login';
-import { Reset } from './src/screens/Reset/Reset';
-import { HomePatient } from './src/screens/HomePatient/HomePatient'
-import { Register } from './src/screens/Register/Register';
-import {ConsultationLocation} from './src/screens/ConsultationLocation/ConsultationLocation'
 import {Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
-import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
-import { EmailCode } from './src/screens/EmailCode/EmailCode';
-import { UserProfile } from './src/screens/UserProfile/UserProfile';
-import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
+import {ConsultationLocation} from './src/screens/ConsultationLocation/ConsultationLocation'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
+import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
 import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
 import { MedicSelect } from './src/screens/MedicSelect/MedicSelect';
-import { DateSelect } from './src/screens/DateSelect/DateSelect';
 import { MedicRecord } from './src/screens/MedicRecord/MedicRecord';
+import { UserProfile } from './src/screens/UserProfile/UserProfile';
+import { HomePatient } from './src/screens/HomePatient/HomePatient'
+import { DateSelect } from './src/screens/DateSelect/DateSelect';
+import { Navegation } from './src/screens/Navegation/Navegation';
+import { NavigationContainer } from '@react-navigation/native';
+import { EmailCode } from './src/screens/EmailCode/EmailCode';
+import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
+import { Register } from './src/screens/Register/Register';
+import { Login } from './src/screens/Login/Login';
+import { Reset } from './src/screens/Reset/Reset';
+import { StatusBar } from 'expo-status-bar';
 
 //Instancia do stack navigator
 const Stack = createNativeStackNavigator();

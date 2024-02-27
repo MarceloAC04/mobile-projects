@@ -1,4 +1,4 @@
-import { AppointmentCard, ClinicSelectCard, MedicSelectCard } from "../../components/Card/Card";
+import { AppointmentCard, AppointmentMedicCard, ClinicSelectCard, MedicSelectCard } from "../../components/Card/Card";
 import { ListCard } from "./Styles";
 import { useState } from "react";
 
@@ -17,8 +17,29 @@ export const CardList = ({ status, cardsData }) => {
                     query={item.query}
                     schedule={item.schedule}
                     email={item.email}
+                />
+            )}
+        />
+    )
+}
+
+export const CardMedicList = ({ status, cardsData }) => {
+    return (
+        <ListCard
+            data={cardsData}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => status == item.situation && (
+                <AppointmentMedicCard
+                    id={item.id}
+                    situation={item.situation}
+                    img={item.img}
+                    name={item.name}
+                    age={item.age}
+                    query={item.query}
+                    schedule={item.schedule}
+                    email={item.email}
                     crm={item.crm}
-                    speacialty={item.speacialty}
+                    specialty={item.specialty}
                 />
             )}
         />

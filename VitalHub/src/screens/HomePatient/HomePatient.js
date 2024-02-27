@@ -1,11 +1,11 @@
+import { ScheduleAppointmentButton } from "../../components/ScheduleAppointmentButton/ScheduleAppointmentButton"
 import { FilterStatusButton } from "../../components/StatusButton/StatusButton"
 import { StatusButtonContainer } from "../../components/StatusButton/Styles"
 import { Calendar } from "../../components/Calendar/Calendar"
 import { Container } from "../../components/Container/Styles"
-import { CardList } from "../../components/CardList/CardList"
+import { CardMedicList } from "../../components/CardList/CardList"
 import { Header } from "../../components/Header/Header"
 import { useState } from "react"
-import { ScheduleAppointmentButton } from "../../components/ScheduleAppointmentButton/ScheduleAppointmentButton"
 
 const cardsMedic = [{
     id: '1', img: require('../../assets/foto-de-perfil-medico.png'),
@@ -14,8 +14,9 @@ const cardsMedic = [{
     crm: 'CRM-15286', specialty: 'Clinico Geral'
 }]
 
-export const HomePatient = () => {
+export const HomePatient = ({ navigation }) => {
     const [statusLista, setStatusLista] = useState("pendente");
+    const [modalVisible, setModalVisible] = useState(false);
     return (
         <Container>
             <Header
@@ -43,12 +44,20 @@ export const HomePatient = () => {
                 />
             </StatusButtonContainer>
 
-            <CardList
+            <CardMedicList
                 status={statusLista}
                 cardsData={cardsMedic}
             />
 
-            <ScheduleAppointmentButton />
+            <ScheduleAppointmentButton
+                onPressConfirmAppointment={() => {
+                    setModalVisible(false)
+                    navigation.navigate("ClinicSelect")
+                }}
+                visible={modalVisible}
+                onPressModal={() => setModalVisible(true)}
+                onPressCancel={() => setModalVisible(false)}
+            />
 
         </Container>
     )

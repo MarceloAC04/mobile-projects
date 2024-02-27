@@ -4,18 +4,18 @@ import { ScheduleAppointment } from "./Styles"
 import { FontAwesome6 } from '@expo/vector-icons';
 
 
-export const ScheduleAppointmentButton = () => {
-    const [modalVisible, setModalVisible] = useState(false);
+export const ScheduleAppointmentButton = ({onPressModal, onPressConfirmAppointment , onPressCancel, visible}) => {
     return (
         <>
-        <ScheduleAppointment onPress={() => setModalVisible(true) }>
+        <ScheduleAppointment onPress={onPressModal}>
             <FontAwesome6 name="stethoscope" size={26} color="#FBFBFB" />
         </ScheduleAppointment>
         <ModalScheduleAppointment
-            visible={modalVisible}
+            visible={visible}
             animation={'slide'}
             transparent={true} 
-            onPress={() => setModalVisible(false)}
+            onPressConfirm={onPressConfirmAppointment}
+            onPressCancel={onPressCancel}
         />
         </>
     )

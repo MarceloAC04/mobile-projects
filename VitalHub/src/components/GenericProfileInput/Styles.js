@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const UserProfileInputContainer = styled.View`
+export const GenericProfileInputContainer = styled.View`
 width: 90%;
 margin-top: 19px;
 gap: 10px;
 `
 
-export const UserProfileInput = styled.TextInput.attrs({
+export const GenericProfileInput = styled.TextInput.attrs({
     placeholderTextColor: '#33303E'
 })`
     font-family: 'MontserratAlternates_500Medium';
@@ -19,7 +19,7 @@ export const UserProfileInput = styled.TextInput.attrs({
     font-size: 14px;
 `
 
-export const UserProfileTextArea = styled(UserProfileInput).attrs({
+export const GenericProfileTextArea = styled(GenericProfileInput).attrs({
     placeholderTextColor: '#33303E'
 })`
     font-family: 'MontserratAlternates_600SemiBold';
@@ -30,7 +30,7 @@ export const UserProfileTextArea = styled(UserProfileInput).attrs({
     vertical-align: top;
 `
 
-export const UserProfileTextAreaEdition = styled(UserProfileInput).attrs({
+export const GenericProfileTextAreaEdition = styled(GenericProfileInput).attrs({
     placeholderTextColor: '#34898F'
 })`
     font-family: 'MontserratAlternates_600SemiBold';
@@ -43,7 +43,7 @@ export const UserProfileTextAreaEdition = styled(UserProfileInput).attrs({
     
 `
 
-export const UserProfileInputEdition = styled(UserProfileTextAreaEdition).attrs({
+export const GenericProfileInputEdition = styled(GenericProfileTextAreaEdition).attrs({
     placeholderTextColor: '#34898F'
 })`
     height: 53px;
@@ -54,14 +54,14 @@ export const UserProfileInputEdition = styled(UserProfileTextAreaEdition).attrs(
     vertical-align: middle;
 `
 
-export const UserProfileInputContainerRow = styled.View`
+export const GenericProfileInputContainerRow = styled.View`
     flex-direction: row;
     width: 90%;
 `
-export const UserProfileInputContainerAddress = styled(UserProfileInputContainer)`
+export const GenericProfileInputContainerAddress = styled(GenericProfileInputContainer)`
     width: 55%;
 `
 
-export const UserProfileInputAddress = styled(UserProfileInput)`
+export const GenericProfileInputAddress = styled(GenericProfileInput)`
     width: 80%;
 `

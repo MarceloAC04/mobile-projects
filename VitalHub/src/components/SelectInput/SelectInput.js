@@ -1,4 +1,3 @@
-import SelectDropdown from "react-native-select-dropdown"
 import RNPickerSelect from "react-native-picker-select"
 import { AntDesign } from '@expo/vector-icons';
 import { LabelText } from "../LabelText/Styles"
@@ -10,25 +9,6 @@ const dataTime = [
     { label: '15:00', value: '15:00' },
     { label: '16:00', value: '16:00' },
 ]
-
-export const SelectInput = ({ textInput, textLabel }) => {
-    return (
-        <View style={styles.container}>
-            <LabelText>{textLabel}</LabelText>
-            <SelectDropdown
-                data={['13:00', '14:00', '15:00', '16:00']}
-                defaultButtonText={textInput}
-                onSelect={(selectedItem, index) => {
-                    console.log(selectedItem, index)
-                }}
-                buttonStyle={styles.button}
-                buttonTextStyle={styles.buttonText}
-                renderDropdownIcon={() => <AntDesign name="caretdown" size={24} color="#34898F" />}
-            />
-
-        </View>
-    )
-}
 
 export const SelectInputPicker = ({ textInput, textLabel }) => {
     return (

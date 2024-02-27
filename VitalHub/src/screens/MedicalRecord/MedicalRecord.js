@@ -1,12 +1,11 @@
 import { useState } from "react"
 import { ButtonEnter } from "../../components/Button/Button"
 import { Container, ContainerScrollView } from "../../components/Container/Styles"
-import { LabelText } from "../../components/LabelText/Styles"
 import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 import { SubTitle } from "../../components/SubTitle/Styles"
 import { Title } from "../../components/Title/Styles"
-import { UserProfileInput, UserProfileInputContainer, UserProfileInputEdition, UserProfileTextArea, UserProfileTextAreaEdition } from "../../components/UserProfileInput/Styles"
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
+import { GenericEditInput, GenericEditTextArea, GenericInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput"
 
 
 export const MedicalRecord = () => {
@@ -19,66 +18,40 @@ export const MedicalRecord = () => {
                 <Title>Richard Kosta</Title>
 
                 <SubTitle>22 Anos    <SubTitle>richard.kosta@gmail.com</SubTitle></SubTitle>
-
                 {
                     !isEditing ? (
                         <>
-                            <UserProfileInputContainer>
-                                <LabelText>Descrição da Consulta</LabelText>
-                                <UserProfileTextArea
-                                    placeholder={`O paciente possuí uma infecção no ouvido. Necessario repouso de 2 dias e acompanhamento médico constante.`}
-                                    multiline
-                                    numberOfLines={5}
-                                    maxLength={200}
-                                />
-                            </UserProfileInputContainer>
+                            <GenericTextArea
+                                textLabel={'Descrição da Consulta'}
+                                placeholder={`O paciente possuí uma infecção no ouvido. Necessario repouso de 2 dias e acompanhamento médico constante.`}
+                            />
 
-                            <UserProfileInputContainer>
-                                <LabelText>Diagnóstico do paciente</LabelText>
-                                <UserProfileInput
-                                    placeholder={'Infecção no ouvindo'}
-                                />
-                            </UserProfileInputContainer>
+                            <GenericInput
+                                textLabel={'Diagnóstico do paciente'}
+                                placeholder={'Infecção no ouvindo'}
+                            />
 
-                            <UserProfileInputContainer>
-                                <LabelText>Prescrição médica</LabelText>
-                                <UserProfileTextArea
-                                    placeholder={`Medicamento: Advil \nDosagem: 50 mg \nFrequência: 3 vezes ao dia \nDuração: 3 dias`}
-                                    multiline
-                                    numberOfLines={6}
-                                    maxLength={250}
-                                />
-                            </UserProfileInputContainer>
+                            <GenericTextArea
+                                textLabel={'Descrição da Consulta'}
+                                placeholder={`Medicamento: Advil \nDosagem: 50 mg \nFrequência: 3 vezes ao dia \nDuração: 3 dias`}
+                            />
                         </>
 
                     ) : (
                         <>
-                            <UserProfileInputContainer>
-                                <LabelText>Descrição da Consulta</LabelText>
-                                <UserProfileTextAreaEdition
-                                    placeholder={'Descrição'}
-                                    multiline
-                                    numberOfLines={5}
-                                    maxLength={200}
-                                />
-                            </UserProfileInputContainer>
+                            <GenericEditTextArea
+                                textLabel={'Descrição da Consulta'}
+                                placeholder={'Descrição'}
+                            />
 
-                            <UserProfileInputContainer>
-                                <LabelText>Diagnóstico do paciente</LabelText>
-                                <UserProfileInputEdition
-                                    placeholder={'Diagnóstico do paciente'}
-                                />
-                            </UserProfileInputContainer>
-
-                            <UserProfileInputContainer>
-                                <LabelText>Prescrição Médica</LabelText>
-                                <UserProfileTextAreaEdition
-                                    placeholder={'Prescrição Médica'}
-                                    multiline
-                                    numberOfLines={6}
-                                    maxLength={250}
-                                />
-                            </UserProfileInputContainer>
+                            <GenericEditInput
+                                textLabel={'Diagnóstico do paciente'}
+                                placeholder={'Infecção no ouvindo'}
+                            />
+                            <GenericEditTextArea
+                                textLabel={'Prescrição Médica'}
+                                placeholder={'Prescrição Médica'}
+                            />
                         </>
                     )
                 }
@@ -87,15 +60,15 @@ export const MedicalRecord = () => {
                     placeholder={'Salvar'}
                 />
 
-                 { !isEditing ? (
-                    <ButtonEnter 
-                    onPress={() => setIsEditing(true)}
-                    placeholder={'Editar'}
+                {!isEditing ? (
+                    <ButtonEnter
+                        onPress={() => setIsEditing(true)}
+                        placeholder={'Editar'}
                     />
-                 ) : null}
+                ) : null}
 
                 <ButtonSecondary
-                    onPress={() => isEditing ? setIsEditing(false) : null }
+                    onPress={() => isEditing ? setIsEditing(false) : null}
                 />
 
             </Container>

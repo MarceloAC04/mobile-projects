@@ -2,11 +2,12 @@ import { Container, ContainerScrollView } from "../../components/Container/Style
 import { LabelText } from "../../components/LabelText/Styles"
 import { SubTitle } from "../../components/SubTitle/Styles"
 import { Title } from "../../components/Title/Styles"
-import { UserProfileInput, UserProfileInputContainer, UserProfileInputContainerRow, UserProfileTextArea } from "../../components/UserProfileInput/Styles"
+import { GenericProfileInput, GenericProfileInputContainer, GenericProfileInputContainerRow, GenericProfileTextArea } from "../../components/UserProfileInput/Styles"
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
 import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 import { MedicRecordButton } from "../../components/Button/Button"
 import { CardLinkText } from "../../components/Card/Style"
+import { GenericInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput"
 
 
 export const MedicRecord = () => {
@@ -18,58 +19,40 @@ export const MedicRecord = () => {
 
                 <SubTitle>Cliníco geral    <SubTitle>CRM-15286</SubTitle></SubTitle>
 
-                <UserProfileInputContainer>
-                    <LabelText>Descrição da Consulta</LabelText>
-                    <UserProfileTextArea
-                        placeholder={`O paciente possuí uma infecção no ouvido. Necessario repouso de 2 dias e acompanhamento médico constante.`}
-                        multiline
-                        numberOfLines={5}
-                        maxLength={200}
-                    />
-                </UserProfileInputContainer>
+                <GenericTextArea
+                    textLabel={'Descrição da Consulta'}
+                    placeholder={`O paciente possuí uma infecção no ouvido. Necessario repouso de 2 dias e acompanhamento médico constante.`}
+                />
 
-                <UserProfileInputContainer>
-                    <LabelText>Diagnóstico do paciente</LabelText>
-                    <UserProfileInput
-                        placeholder={'Infecção no ouvindo'}
-                    />
-                </UserProfileInputContainer>
+                <GenericInput
+                    textLabel={'Diagnóstico do paciente'}
+                    placeholder={'Infecção no ouvindo'}
+                />
 
-                <UserProfileInputContainer>
+                <GenericTextArea
+                    textLabel={'Descrição da Consulta'}
+                    placeholder={`Medicamento: Advil \nDosagem: 50 mg \nFrequência: 3 vezes ao dia \nDuração: 3 dias`}
+                />
+
+                <GenericProfileInputContainer>
                     <LabelText>Prescrição médica</LabelText>
-                    <UserProfileTextArea
-                        placeholder={`Medicamento: Advil \nDosagem: 50 mg \nFrequência: 3 vezes ao dia \nDuração: 3 dias`}
-                        multiline
-                        numberOfLines={6}
-                        maxLength={250}
-                    />
-                </UserProfileInputContainer>
-
-                <UserProfileInputContainer>
-                    <LabelText>Prescrição médica</LabelText>
-                    <UserProfileTextArea
+                    <GenericProfileTextArea
                         placeholder={`               \n            Nenhuma foto informada`}
                         multiline
                         numberOfLines={6}
                         maxLength={250}
                     />
-                </UserProfileInputContainer>
+                </GenericProfileInputContainer>
 
-                <UserProfileInputContainerRow>
-                    <MedicRecordButton placeholder={'Enviar'}/>
+                <GenericProfileInputContainerRow>
+                    <MedicRecordButton placeholder={'Enviar'} />
                     <CardLinkText> Cancelar </CardLinkText>
-                </UserProfileInputContainerRow>
+                </GenericProfileInputContainerRow>
 
-                <UserProfileInputContainer>
-                    <UserProfileTextArea
-                        placeholder={`Resultado do exame de sangue : \ntudo normal`}
-                        multiline
-                        numberOfLines={6}
-                        maxLength={250}
-                    />
-                </UserProfileInputContainer>
-
-                <ButtonSecondary 
+                <GenericTextArea
+                    placeholder={`Resultado do exame de sangue : \ntudo normal`}
+                />
+                <ButtonSecondary
                     placeholder={'voltar'}
                 />
             </Container>

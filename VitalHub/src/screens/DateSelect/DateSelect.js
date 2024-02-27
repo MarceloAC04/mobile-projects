@@ -4,7 +4,7 @@ import { CalendarSchedule } from "../../components/CalendarSchedule/CalendarSche
 import { Container } from "../../components/Container/Styles"
 import { ModalConfirmAppointment } from "../../components/Modal/Modal"
 import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
-import { SelectInput, SelectInputPicker } from "../../components/SelectInput/SelectInput"
+import { SelectInputPicker } from "../../components/SelectInput/SelectInput"
 import { Title } from "../../components/Title/Styles"
 
 

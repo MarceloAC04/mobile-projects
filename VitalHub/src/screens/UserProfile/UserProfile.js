@@ -1,10 +1,10 @@
 import { Container, ContainerScrollView } from "../../components/Container/Styles"
-import { LabelText } from "../../components/LabelText/Styles"
 import { SubTitle } from "../../components/SubTitle/Styles"
 import { Title } from "../../components/Title/Styles"
-import { UserProfileInput, UserProfileInputAddress, UserProfileInputContainer, UserProfileInputContainerAddress, UserProfileInputContainerRow } from "../../components/UserProfileInput/Styles"
+import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles"
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
 import { ButtonEnter, ButtonGrey } from "../../components/Button/Button"
+import { GenericInput, GenericProfileAddressInput } from "../../components/GenericProfileInput/GenericProfileInput"
 
 
 export const UserProfile = () => {
@@ -17,32 +17,29 @@ export const UserProfile = () => {
 
                 <SubTitle>richard.kosta@gmail.com</SubTitle>
 
-                <UserProfileInputContainer>
-                    <LabelText>Data de Nascimento: </LabelText>
-                    <UserProfileInput placeholder={'04/05/1999'} />
-                </UserProfileInputContainer>
+                <GenericInput
+                    textLabel={'Data de Nascimento: '}
+                    placeholder={'04/05/1999'}
+                />
+                <GenericInput
+                    textLabel={'CPF: '}
+                    placeholder={'859********'}
+                />
+                <GenericInput
+                    textLabel={'Endereço: '}
+                    placeholder={'Rua Vicenso Silva, 987'}
+                />
 
-                <UserProfileInputContainer>
-                    <LabelText>CPF: </LabelText>
-                    <UserProfileInput placeholder={'859********'} />
-                </UserProfileInputContainer>
-
-                <UserProfileInputContainer>
-                    <LabelText>Endereço: </LabelText>
-                    <UserProfileInput placeholder={'Rua Vicenso Silva, 987'} />
-                </UserProfileInputContainer>
-
-                <UserProfileInputContainerRow>
-                    <UserProfileInputContainerAddress>
-                        <LabelText>CEP: </LabelText>
-                        <UserProfileInputAddress placeholder={'06548-909'} />
-                    </UserProfileInputContainerAddress>
-
-                    <UserProfileInputContainerAddress>
-                        <LabelText>Cidade: </LabelText>
-                        <UserProfileInputAddress placeholder={'Moema-SP'} />
-                    </UserProfileInputContainerAddress>
-                </UserProfileInputContainerRow>
+                <GenericProfileInputContainerRow>
+                        <GenericProfileAddressInput 
+                            textLabel={'Cep: '}
+                            placeholder={'06548-909'}
+                        />
+                         <GenericProfileAddressInput 
+                            textLabel={'Cidade: '}
+                            placeholder={'Moema-SP'}
+                        />
+                </GenericProfileInputContainerRow>
 
                 <ButtonEnter
                     placeholder={'salvar'}
@@ -52,7 +49,7 @@ export const UserProfile = () => {
                     placeholder={'editar'}
                 />
 
-                <ButtonGrey 
+                <ButtonGrey
                     placeholder={'Sair do app'}
                 />
             </Container>

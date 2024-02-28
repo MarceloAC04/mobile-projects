@@ -1,6 +1,6 @@
 import { ScheduleCalendar } from "./Styles"
 import 'moment/locale/pt-br';
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { LocaleConfig } from "react-native-calendars";
 
 //instância da data atual
@@ -36,7 +36,7 @@ LocaleConfig.defaultLocale = 'pt-br'
 
 
 export const CalendarSchedule = () => {
-  const [select, setSelect] = useState(currentDate)
+  const [select, setSelect] = useState('')
 
   const onDayPress = (day => {
     setSelect(day.dateString);
@@ -55,16 +55,13 @@ export const CalendarSchedule = () => {
   return (
     <ScheduleCalendar
       hideArrows={true}
-      initialDate={currentDate.toDateString()}
       minDate={startingDate.toDateString()}
       maxDate={endingDate.toDateString()}
       onDayPress={onDayPress}
       markedDates={marked}
       theme={{
         textSectionTitleColor: '#ACABB7',
-        todayTextColor: 'white',
-        todayBackgroundColor: '#60BFC5',
-        dayTextColor: '#5F5C6B',
+        todayTextColor: '#5F5C6B',
         textDisabledColor: '#d9e1e8',
         monthTextColor: '#4E4B59',
         textMonthFontFamily: 'MontserratAlternates_600SemiBold',

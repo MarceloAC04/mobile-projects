@@ -2,8 +2,8 @@ import { Container, ContainerScrollView } from "../../components/Container/Style
 import { MapClinic } from "../../components/MapClinic/Styles"
 import { Title } from "../../components/Title/Styles"
 import { SubTitle } from "../../components/SubTitle/Styles"
-import { UserProfileInput, UserProfileInputAddress, UserProfileInputContainer, UserProfileInputContainerAddress, UserProfileInputContainerRow } from "../../components/UserProfileInput/Styles"
-import { LabelText } from "../../components/LabelText/Styles"
+import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles"
+import { GenericInput, GenericProfileAddressInput } from "../../components/GenericProfileInput/GenericProfileInput"
 
 
 export const ConsultationLocation = () => {
@@ -15,22 +15,21 @@ export const ConsultationLocation = () => {
                 <Title>Clínica Natureh</Title>
                 <SubTitle>São Paulo, SP</SubTitle>
 
-                <UserProfileInputContainer>
-                    <LabelText>Endereço</LabelText>
-                    <UserProfileInput>Rua Vicenso Silva, 987</UserProfileInput>
-                </UserProfileInputContainer>
+                <GenericInput
+                    textLabel={'Endereço'}
+                    placeholder={'Rua Vicenso Silva, 987'}
+                />
+                <GenericProfileInputContainerRow>
+                    <GenericProfileAddressInput
+                        textLabel={'Número'}
+                        placeholder={'578'}
+                    />
 
-                <UserProfileInputContainerRow>
-                    <UserProfileInputContainerAddress>
-                        <LabelText>Número</LabelText>
-                        <UserProfileInputAddress>578</UserProfileInputAddress>
-                    </UserProfileInputContainerAddress>
-
-                    <UserProfileInputContainerAddress>
-                        <LabelText>Bairro</LabelText>
-                        <UserProfileInputAddress>Moema-SP</UserProfileInputAddress>
-                    </UserProfileInputContainerAddress>
-                </UserProfileInputContainerRow>
+                    <GenericProfileAddressInput
+                        textLabel={'Bairro'}
+                        placeholder={'Moema-SP'}
+                    />
+                </GenericProfileInputContainerRow>
 
             </Container>
         </ContainerScrollView>

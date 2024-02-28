@@ -2,7 +2,7 @@ import { Container, ContainerScrollView } from "../../components/Container/Style
 import { LabelText } from "../../components/LabelText/Styles"
 import { SubTitle } from "../../components/SubTitle/Styles"
 import { Title } from "../../components/Title/Styles"
-import { GenericProfileInput, GenericProfileInputContainer, GenericProfileInputContainerRow, GenericProfileTextArea } from "../../components/UserProfileInput/Styles"
+import { GenericProfileInputContainer, GenericProfileInputContainerRow, GenericProfileTextArea } from "../../components/GenericProfileInput/Styles"
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
 import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 import { MedicRecordButton } from "../../components/Button/Button"

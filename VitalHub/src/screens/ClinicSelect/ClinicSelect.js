@@ -1,8 +1,8 @@
-import { Container } from "../../components/Container/Styles"
-import { Title } from "../../components/Title/Styles"
-import { ClinicCardList } from "../../components/CardList/CardList"
-import { ButtonEnter } from "../../components/Button/Button"
 import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
+import { ClinicCardList } from "../../components/CardList/CardList"
+import { Container } from "../../components/Container/Styles"
+import { ButtonEnter } from "../../components/Button/Button"
+import { Title } from "../../components/Title/Styles"
 
 const clinicCards = [
     { id: 1, clinicName: 'Clínica Natureh', score: '4,5', city: 'São Paulo', uf: 'SP', days: 'Seg-Sex', select: true },

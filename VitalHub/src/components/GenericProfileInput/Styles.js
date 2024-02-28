@@ -17,6 +17,7 @@ export const GenericProfileInput = styled.TextInput.attrs({
     border-radius: 5px;
     padding: 16px;
     font-size: 14px;
+    
 `
 
 export const GenericProfileTextArea = styled(GenericProfileInput).attrs({

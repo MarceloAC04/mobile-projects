@@ -3,7 +3,6 @@ import {
     GenericProfileInputAddress,
     GenericProfileInputContainer,
     GenericProfileInputContainerAddress,
-    GenericProfileInputContainerRow,
     GenericProfileInputEdition,
     GenericProfileTextArea,
     GenericProfileTextAreaEdition
@@ -23,7 +22,7 @@ export const GenericProfileAddressInput = ({ textLabel, placeholder }) => {
     return (
         <GenericProfileInputContainerAddress>
             <LabelText>{textLabel}</LabelText>
-            <GenericProfileInput placeholder={placeholder} />
+            <GenericProfileInputAddress placeholder={placeholder} />
         </GenericProfileInputContainerAddress>
     )
 }

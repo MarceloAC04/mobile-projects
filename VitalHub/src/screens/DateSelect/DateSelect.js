@@ -1,13 +1,11 @@
-import { useState } from "react"
-import { ButtonEnter } from "../../components/Button/Button"
 import { CalendarSchedule } from "../../components/CalendarSchedule/CalendarSchedule"
-import { Container } from "../../components/Container/Styles"
-import { ModalConfirmAppointment } from "../../components/Modal/Modal"
 import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 import { SelectInputPicker } from "../../components/SelectInput/SelectInput"
+import { ModalConfirmAppointment } from "../../components/Modal/Modal"
+import { Container } from "../../components/Container/Styles"
+import { ButtonEnter } from "../../components/Button/Button"
 import { Title } from "../../components/Title/Styles"
-
-
+import { useState } from "react"
 
 export const DateSelect = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);

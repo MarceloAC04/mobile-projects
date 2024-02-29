@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const GenericProfileInputContainer = styled.View`
-width: 90%;
-margin-top: 19px;
-gap: 10px;
+    width: 90%;
+    margin-top: 19px;
+    gap: 10px;
 `
 
 export const GenericProfileInput = styled.TextInput.attrs({
@@ -65,4 +65,15 @@ export const GenericProfileInputContainerAddress = styled(GenericProfileInputCon
 
 export const GenericProfileInputAddress = styled(GenericProfileInput)`
     width: 80%;
+`
+export const GenericPrescriptionContainer = styled.View`
+    height: 120px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F3F3;
+`
+export const GenericPrescriptionImageInput = styled(GenericProfileInput)`
+    font-family: 'MontserratAlternates_600SemiBold';
+    width: 65%;
 `

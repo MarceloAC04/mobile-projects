@@ -1,13 +1,12 @@
 import { Container, ContainerScrollView } from "../../components/Container/Styles"
-import { LabelText } from "../../components/LabelText/Styles"
 import { SubTitle } from "../../components/SubTitle/Styles"
 import { Title } from "../../components/Title/Styles"
-import { GenericProfileInputContainer, GenericProfileInputContainerRow, GenericProfileTextArea } from "../../components/GenericProfileInput/Styles"
+import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles"
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
 import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 import { MedicRecordButton } from "../../components/Button/Button"
 import { CardLinkText } from "../../components/Card/Style"
-import { GenericInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput"
+import { GenericInput, GenericPrescriptionInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput"
 
 
 export const MedicRecord = () => {
@@ -34,15 +33,10 @@ export const MedicRecord = () => {
                     placeholder={`Medicamento: Advil \nDosagem: 50 mg \nFrequência: 3 vezes ao dia \nDuração: 3 dias`}
                 />
 
-                <GenericProfileInputContainer>
-                    <LabelText>Prescrição médica</LabelText>
-                    <GenericProfileTextArea
-                        placeholder={`               \n            Nenhuma foto informada`}
-                        multiline
-                        numberOfLines={6}
-                        maxLength={250}
-                    />
-                </GenericProfileInputContainer>
+                <GenericPrescriptionInput 
+                    textLabel={'Prescrição médica'}
+                    placeholder={`Nenhuma foto informada`}
+                />
 
                 <GenericProfileInputContainerRow>
                     <MedicRecordButton placeholder={'Enviar'} />

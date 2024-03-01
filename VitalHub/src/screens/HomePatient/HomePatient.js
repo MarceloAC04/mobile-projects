@@ -1,11 +1,11 @@
-import { ScheduleAppointmentButton } from "../../components/ScheduleAppointmentButton/ScheduleAppointmentButton"
-import { FilterStatusButton } from "../../components/StatusButton/StatusButton"
-import { StatusButtonContainer } from "../../components/StatusButton/Styles"
-import { Calendar } from "../../components/Calendar/Calendar"
-import { Container } from "../../components/Container/Styles"
-import { CardMedicList } from "../../components/CardList/CardList"
-import { Header } from "../../components/Header/Header"
-import { useState } from "react"
+import { ScheduleAppointmentButton } from "../../components/ScheduleAppointmentButton/ScheduleAppointmentButton";
+import { FilterStatusButton } from "../../components/StatusButton/StatusButton";
+import { StatusButtonContainer } from "../../components/StatusButton/Styles";
+import { CardMedicList } from "../../components/CardList/CardList";
+import { Calendar } from "../../components/Calendar/Calendar";
+import { Container } from "../../components/Container/Styles";
+import { Header } from "../../components/Header/Header";
+import { useState } from "react";
 
 const cardsMedic = [{
     id: '1', img: require('../../assets/foto-de-perfil-medico.png'),

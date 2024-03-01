@@ -1,4 +1,4 @@
-import { AppointmentLevelButtonStyle, AppointmentLevelButtonText, StatusButton, StatusButtonText } from "./Styles"
+import { AppointmentLevelButtonStyle, AppointmentLevelButtonText, StatusButton, StatusButtonText } from "./Styles";
 
 
 export const FilterStatusButton = ({

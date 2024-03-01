@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ModalScheduleAppointment } from "../Modal/Modal";
 import { ScheduleAppointment } from "./Styles"
 import { FontAwesome6 } from '@expo/vector-icons';

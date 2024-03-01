@@ -1,11 +1,11 @@
-import { useState } from "react"
-import { ButtonEnter } from "../../components/Button/Button"
-import { Container, ContainerScrollView } from "../../components/Container/Styles"
-import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
-import { SubTitle } from "../../components/SubTitle/Styles"
-import { Title } from "../../components/Title/Styles"
-import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
-import { GenericEditInput, GenericEditTextArea, GenericInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput"
+import { GenericEditInput, GenericEditTextArea, GenericInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput";
+import { Container, ContainerScrollView } from "../../components/Container/Styles";
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton";
+import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles";
+import { ButtonEnter } from "../../components/Button/Button";
+import { SubTitle } from "../../components/SubTitle/Styles";
+import { Title } from "../../components/Title/Styles";
+import { useState } from "react";
 
 
 export const MedicalRecord = () => {

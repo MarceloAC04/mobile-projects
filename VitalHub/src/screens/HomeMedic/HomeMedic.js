@@ -1,5 +1,5 @@
 import { FilterStatusButton } from "../../components/StatusButton/StatusButton";
-import { StatusButtonContainer } from "../../components/StatusButton/Styles"
+import { StatusButtonContainer } from "../../components/StatusButton/Styles";
 import { CardList } from "../../components/CardList/CardList";
 import { Container } from "../../components/Container/Styles"
 import { Calendar } from "../../components/Calendar/Calendar";

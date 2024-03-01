@@ -1,8 +1,8 @@
-import { HeaderContainer, HeaderUserProfile, HeaderUserProfileText } from "../../components/Header/Styles"
-import { UserProfilePhotoHeader } from "../../components/UserProfilePhoto/Styles"
-import { SubTitle } from "../../components/SubTitle/Styles"
-import { TitleHeader } from "../../components/Title/Styles"
-import { FontAwesome } from '@expo/vector-icons'
+import { HeaderContainer, HeaderUserProfile, HeaderUserProfileText } from "../../components/Header/Styles";
+import { UserProfilePhotoHeader } from "../../components/UserProfilePhoto/Styles";
+import { SubTitle } from "../../components/SubTitle/Styles";
+import { TitleHeader } from "../../components/Title/Styles";
+import { FontAwesome } from '@expo/vector-icons';
 
 export const Header = ({userPhoto, userName}) => {
     return (

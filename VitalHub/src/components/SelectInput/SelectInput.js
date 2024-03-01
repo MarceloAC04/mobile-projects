@@ -1,7 +1,7 @@
-import RNPickerSelect from "react-native-picker-select"
-import { AntDesign } from '@expo/vector-icons';
-import { LabelText } from "../LabelText/Styles"
+import RNPickerSelect from "react-native-picker-select";
+import { LabelText } from "../LabelText/Styles";
 import { StyleSheet, View } from "react-native";
+import { AntDesign } from '@expo/vector-icons';
 
 const dataTime = [
     { label: '13:00', value: '13:00' },
@@ -10,12 +10,12 @@ const dataTime = [
     { label: '16:00', value: '16:00' },
 ]
 
-export const SelectInputPicker = ({ textInput, textLabel }) => {
+export const SelectInputPicker = ({ textInput, textLabel, selectedTime = null }) => {
     return (
         <View style={styles.container}>
             <LabelText>{textLabel}</LabelText>
             <RNPickerSelect
-                onValueChange={(value) => console.log(value)}
+                onValueChange={(value) => selectedTime(value)}
                 items={dataTime}
                 placeholder={{ label: textInput, value: null }}
                 Icon={() => <AntDesign name="caretdown" size={24} color="#34898F" />}
@@ -28,8 +28,8 @@ export const SelectInputPicker = ({ textInput, textLabel }) => {
 const styles = StyleSheet.create({
     container: {
         width: '90%',
-        marginTop: 25,
-        marginBottom: 25,
+        marginTop: 20,
+        marginBottom: 20,
         gap: 10,
     },
     inputIOS: {

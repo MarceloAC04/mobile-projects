@@ -1,10 +1,10 @@
-import { Container, ContainerScrollView } from "../../components/Container/Styles"
-import { SubTitle } from "../../components/SubTitle/Styles"
-import { Title } from "../../components/Title/Styles"
-import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles"
-import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
-import { ButtonEnter, ButtonGrey } from "../../components/Button/Button"
-import { GenericInput, GenericProfileAddressInput } from "../../components/GenericProfileInput/GenericProfileInput"
+import { GenericInput, GenericProfileAddressInput } from "../../components/GenericProfileInput/GenericProfileInput";
+import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles";
+import { Container, ContainerScrollView } from "../../components/Container/Styles";
+import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles";
+import { ButtonEnter, ButtonGrey } from "../../components/Button/Button";
+import { SubTitle } from "../../components/SubTitle/Styles";
+import { Title } from "../../components/Title/Styles";
 
 
 export const UserProfile = () => {
@@ -31,14 +31,14 @@ export const UserProfile = () => {
                 />
 
                 <GenericProfileInputContainerRow>
-                        <GenericProfileAddressInput 
-                            textLabel={'Cep: '}
-                            placeholder={'06548-909'}
-                        />
-                         <GenericProfileAddressInput 
-                            textLabel={'Cidade: '}
-                            placeholder={'Moema-SP'}
-                        />
+                    <GenericProfileAddressInput
+                        textLabel={'Cep: '}
+                        placeholder={'06548-909'}
+                    />
+                    <GenericProfileAddressInput
+                        textLabel={'Cidade: '}
+                        placeholder={'Moema-SP'}
+                    />
                 </GenericProfileInputContainerRow>
 
                 <ButtonEnter

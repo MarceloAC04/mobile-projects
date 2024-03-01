@@ -1,11 +1,11 @@
-import { Container, ContainerIcons } from "../../components/Container/Styles"
-import { Logo } from "../../components/Logo/Styles"
-import { Title } from "../../components/Title/Styles"
-import { SubTitle } from "../../components/SubTitle/Styles"
-import { EmailCodeInput, EmailCodeInputContainer } from "../../components/EmailCodeInput/Styles"
+import { EmailCodeInput, EmailCodeInputContainer } from "../../components/EmailCodeInput/Styles";
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton";
+import { Container, ContainerIcons } from "../../components/Container/Styles";
+import { ButtonEnter } from "../../components/Button/Button";
+import { SubTitle } from "../../components/SubTitle/Styles";
+import { Title } from "../../components/Title/Styles";
+import { Logo } from "../../components/Logo/Styles";
 import { AntDesign } from '@expo/vector-icons';
-import { ButtonEnter } from "../../components/Button/Button"
-import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
 
 export const EmailCode = ({navigation}) => {
     return (

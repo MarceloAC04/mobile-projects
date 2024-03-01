@@ -8,9 +8,9 @@ import {
     GenericProfileInputEdition,
     GenericProfileTextArea,
     GenericProfileTextAreaEdition
-} from "../../components/GenericProfileInput/Styles"
-import { LabelText } from "../LabelText/Styles"
+} from "../../components/GenericProfileInput/Styles";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { LabelText } from "../LabelText/Styles";
 
 export const GenericInput = ({ textLabel, placeholder }) => {
     return (

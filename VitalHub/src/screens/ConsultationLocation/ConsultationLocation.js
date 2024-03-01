@@ -1,9 +1,9 @@
-import { Container, ContainerScrollView } from "../../components/Container/Styles"
-import { MapClinic } from "../../components/MapClinic/Styles"
-import { Title } from "../../components/Title/Styles"
-import { SubTitle } from "../../components/SubTitle/Styles"
-import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles"
-import { GenericInput, GenericProfileAddressInput } from "../../components/GenericProfileInput/GenericProfileInput"
+import { GenericInput, GenericProfileAddressInput } from "../../components/GenericProfileInput/GenericProfileInput";
+import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles";
+import { Container, ContainerScrollView } from "../../components/Container/Styles";
+import { MapClinic } from "../../components/MapClinic/Styles";
+import { SubTitle } from "../../components/SubTitle/Styles";
+import { Title } from "../../components/Title/Styles";
 
 
 export const ConsultationLocation = () => {

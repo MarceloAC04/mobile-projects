@@ -1,4 +1,4 @@
-import { SecondaryButton, SecondaryButtonText } from "./Styles"
+import { SecondaryButton, SecondaryButtonText } from "./Styles";
 
 
 export const ButtonSecondary = ({onPress, placeholder = 'cancelar' }) => {

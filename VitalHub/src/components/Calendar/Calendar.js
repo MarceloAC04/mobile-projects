@@ -1,4 +1,4 @@
-import { CalendarStyle} from "../../components/Calendar/Styles"
+import { CalendarStyle} from "../../components/Calendar/Styles";
 import { StyleSheet } from "react-native";
 import moment from "moment"
 import 'moment/locale/pt-br';

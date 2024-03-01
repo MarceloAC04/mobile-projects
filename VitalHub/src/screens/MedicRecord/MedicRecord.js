@@ -1,12 +1,12 @@
-import { Container, ContainerScrollView } from "../../components/Container/Styles"
-import { SubTitle } from "../../components/SubTitle/Styles"
-import { Title } from "../../components/Title/Styles"
-import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles"
-import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles"
-import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
-import { MedicRecordButton } from "../../components/Button/Button"
-import { CardLinkText } from "../../components/Card/Style"
-import { GenericInput, GenericPrescriptionInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput"
+import { GenericInput, GenericPrescriptionInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput";
+import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles";
+import { Container, ContainerScrollView } from "../../components/Container/Styles";
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton";
+import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles";
+import { MedicRecordButton } from "../../components/Button/Button";
+import { SubTitle } from "../../components/SubTitle/Styles";
+import { CardLinkText } from "../../components/Card/Style";
+import { Title } from "../../components/Title/Styles";
 
 
 export const MedicRecord = () => {

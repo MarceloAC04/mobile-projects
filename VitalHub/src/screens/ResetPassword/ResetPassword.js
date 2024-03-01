@@ -1,11 +1,10 @@
-import { Container, ContainerIcons } from "../../components/Container/Styles"
-import { Title } from "../../components/Title/Styles"
-import { SubTitle } from "../../components/SubTitle/Styles"
-import { Logo } from "../../components/Logo/Styles"
-import { Input } from "../../components/Input/Styles"
-import { Button, ButtonTitle } from "../../components/Button/Styles"
+import { Container, ContainerIcons } from "../../components/Container/Styles";
+import { ButtonEnter } from "../../components/Button/Button";
+import { SubTitle } from "../../components/SubTitle/Styles";
+import { Input } from "../../components/Input/Styles";
+import { Title } from "../../components/Title/Styles";
+import { Logo } from "../../components/Logo/Styles";
 import { AntDesign } from '@expo/vector-icons';
-import { ButtonEnter } from "../../components/Button/Button"
 
 
 export const ResetPassword = ({navigation}) => {

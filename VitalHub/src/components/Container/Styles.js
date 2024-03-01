@@ -14,4 +14,5 @@ export const ContainerIcons = styled.View`
 `
 
 export const ContainerScrollView = styled.ScrollView`
+    margin-bottom: 10px;
 `

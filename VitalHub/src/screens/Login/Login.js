@@ -1,10 +1,10 @@
-import { Logo } from "../../components/Logo/Styles"
-import { Container } from "../../components/Container/Styles"
-import { Title } from "../../components/Title/Styles"
-import { Input } from "../../components/Input/Styles"
-import { LinkAccount, LinkMedium } from "../../components/Links/Styles"
-import { ContentAccount, TextAccount } from "../../components/ContentAccount/Styles"
-import { ButtonEnter, ButtonGoogle } from "../../components/Button/Button"
+import { ContentAccount, TextAccount } from "../../components/ContentAccount/Styles";
+import { ButtonEnter, ButtonGoogle } from "../../components/Button/Button";
+import { LinkAccount, LinkMedium } from "../../components/Links/Styles";
+import { Container } from "../../components/Container/Styles";
+import { Title } from "../../components/Title/Styles";
+import { Input } from "../../components/Input/Styles";
+import { Logo } from "../../components/Logo/Styles";
 
 export const Login = ({navigation}) => {
     return (

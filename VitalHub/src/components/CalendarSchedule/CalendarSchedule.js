@@ -1,7 +1,6 @@
-import { ScheduleCalendar } from "./Styles"
-import 'moment/locale/pt-br';
-import { useMemo, useState } from "react";
+import { ContainerDateDay, DateDayText, ScheduleCalendar } from "./Styles";
 import { LocaleConfig } from "react-native-calendars";
+import { TouchableOpacity } from "react-native";
 
 //instância da data atual
 const currentDate = new Date();
@@ -34,42 +33,32 @@ LocaleConfig.locales['pt-br'] = {
 
 LocaleConfig.defaultLocale = 'pt-br'
 
-
-export const CalendarSchedule = () => {
-  const [select, setSelect] = useState('')
-
-  const onDayPress = (day => {
-    setSelect(day.dateString);
-  });
-
-  const marked = useMemo(() => {
-    return {
-      [select]: {
-        selected: true,
-        disableTouchEvent: true,
-        selectedColor: '#60BFC5',
-        selectedDayTextColor: '#ffffff',
-      }
-    };
-  }, [select]);
+export const CalendarSchedule = ({ selected = '', selectedDateDay = null }) => {
   return (
     <ScheduleCalendar
       hideArrows={true}
-      minDate={startingDate.toDateString()}
-      maxDate={endingDate.toDateString()}
-      onDayPress={onDayPress}
-      markedDates={marked}
+      monthFormat='MMMM yyyy'
+      minDate={currentDate.dateString}
+      maxDate={endingDate.dateString}
+      dayComponent={({ date, state }) => {
+        return (
+          <TouchableOpacity onPress={() => {
+            if (state === 'disabled') {
+              return null;
+            }
+              selectedDateDay(date.dateString)
+          }
+          }>
+            <ContainerDateDay isSelected={date.dateString === selected}>
+              <DateDayText isSelected={date.dateString === selected} isDisabled={state === 'disabled'}>{date.day}</DateDayText >
+            </ContainerDateDay>
+          </TouchableOpacity>
+        );
+      }}
       theme={{
-        textSectionTitleColor: '#ACABB7',
-        todayTextColor: '#5F5C6B',
-        textDisabledColor: '#d9e1e8',
         monthTextColor: '#4E4B59',
         textMonthFontFamily: 'MontserratAlternates_600SemiBold',
-        textDayHeaderFontFamily: 'Quicksand_600SemiBold',
-        textDayFontFamily: 'Quicksand_600SemiBold',
-        textDayFontSize: 14,
-        textMonthFontSize: 20,
-        textDayHeaderFontSize: 14
+        textMonthFontSize: 22
       }}
 
     />

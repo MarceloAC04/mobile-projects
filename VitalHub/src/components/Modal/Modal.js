@@ -9,10 +9,10 @@ import {
     ModalConfirmAppointmentContainerLabel,
     ModalConfirmAppointmentContent
 } from "./Styles";
-import { ScheduleAppointmentContainer, ScheduleAppointmentInput } from "../ModalAppointmentInput/Styles";
 import { SubTitle, SubTitleContainerModal, SubTitleModalConfirm, SubTitleModalConfirmLabel } from "../SubTitle/Styles";
-import { AppointmentLevelButtonContainer } from "../StatusButton/Styles";
+import { ScheduleAppointmentContainer, ScheduleAppointmentInput } from "../ModalAppointmentInput/Styles";
 import { ButtonEnter, ButtonModalAppointment, ButtonModalConfirmAppointment } from "../Button/Button";
+import { AppointmentLevelButtonContainer } from "../StatusButton/Styles";
 import { AppointmentLevelButton } from "../StatusButton/StatusButton";
 import { ButtonSecondary } from "../SecondaryButton/SecondaryButton";
 import { UserProfilePhotoModal } from "../UserProfilePhoto/Styles";
@@ -123,7 +123,7 @@ export const ModalScheduleAppointment = ({ animation, transparent, visible, onPr
     )
 }
 
-export const ModalConfirmAppointment = ({ animation, transparent, visible, onPressCancel, onPressConfirm }) => {
+export const ModalConfirmAppointment = ({ animation, transparent, visible, date, appointmentTime, onPressCancel, onPressConfirm }) => {
     return (
         <Modal
             animationType={animation}
@@ -137,7 +137,7 @@ export const ModalConfirmAppointment = ({ animation, transparent, visible, onPre
                     <ModalConfirmAppointmentContent>
                         <ModalConfirmAppointmentContainerLabel>
                             <LabelText>Data da consulta</LabelText>
-                            <SubTitleModalConfirmLabel>1 de Novembro de 2023</SubTitleModalConfirmLabel>
+                            <SubTitleModalConfirmLabel>{date} {appointmentTime}</SubTitleModalConfirmLabel>
                         </ModalConfirmAppointmentContainerLabel>
 
                         <ModalConfirmAppointmentContainerLabel>

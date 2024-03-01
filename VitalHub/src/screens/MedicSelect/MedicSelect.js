@@ -1,8 +1,8 @@
-import { Container } from "../../components/Container/Styles"
-import { MedicSelectCardList } from "../../components/CardList/CardList"
-import { Title } from "../../components/Title/Styles"
-import { ButtonEnter } from "../../components/Button/Button"
-import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton"
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton";
+import { MedicSelectCardList } from "../../components/CardList/CardList";
+import { Container } from "../../components/Container/Styles";
+import { ButtonEnter } from "../../components/Button/Button";
+import { Title } from "../../components/Title/Styles";
 
 const medicCards = [
     { id: 1, img: require('../../assets/foto-de-perfil-medico-2.png'), medicName: 'Dra Alessandra', speciality: 'Demartologa, Esteticista' },

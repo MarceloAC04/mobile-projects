@@ -4,9 +4,10 @@ import { Container, ContainerScrollView } from "../../components/Container/Style
 import { MapClinic } from "../../components/MapClinic/Styles";
 import { SubTitle } from "../../components/SubTitle/Styles";
 import { Title } from "../../components/Title/Styles";
+import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton";
 
 
-export const ConsultationLocation = () => {
+export const ClinicLocation = ({navigation}) => {
     return (
         <ContainerScrollView>
             <Container>
@@ -30,6 +31,11 @@ export const ConsultationLocation = () => {
                         placeholder={'Moema-SP'}
                     />
                 </GenericProfileInputContainerRow>
+
+                <ButtonSecondary
+                    placeholder={'voltar'}
+                    onPress={() => navigation.navigate('HomePatient')}
+                />
 
             </Container>
         </ContainerScrollView>

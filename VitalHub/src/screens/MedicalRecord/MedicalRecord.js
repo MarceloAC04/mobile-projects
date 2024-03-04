@@ -8,7 +8,7 @@ import { Title } from "../../components/Title/Styles";
 import { useState } from "react";
 
 
-export const MedicalRecord = () => {
+export const MedicalRecord = ({navigation}) => {
     const [isEditing, setIsEditing] = useState(false);
     return (
         <ContainerScrollView>
@@ -57,6 +57,7 @@ export const MedicalRecord = () => {
                 }
 
                 <ButtonEnter
+                    onPress={() => isEditing ? setIsEditing(false) : null}
                     placeholder={'Salvar'}
                 />
 
@@ -68,7 +69,7 @@ export const MedicalRecord = () => {
                 ) : null}
 
                 <ButtonSecondary
-                    onPress={() => isEditing ? setIsEditing(false) : null}
+                    onPress={() => navigation.navigate('HomeMedic')}
                 />
 
             </Container>

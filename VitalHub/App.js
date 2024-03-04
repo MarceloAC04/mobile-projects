@@ -1,5 +1,5 @@
-import {Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold} from '@expo-google-fonts/quicksand';
-import {ConsultationLocation} from './src/screens/ConsultationLocation/ConsultationLocation'
+import { Quicksand_500Medium, Quicksand_400Regular, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
+import { ClinicLocation } from './src/screens/ClinicLocation/ClinicLocation';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 import { ResetPassword } from './src/screens/ResetPassword/ResetPassword';
@@ -21,10 +21,11 @@ import { StatusBar } from 'expo-status-bar';
 //Instancia do stack navigator
 const Stack = createNativeStackNavigator();
 
-import { useFonts, MontserratAlternates_600SemiBold, 
-  MontserratAlternates_500Medium, 
+import {
+  useFonts, MontserratAlternates_600SemiBold,
+  MontserratAlternates_500Medium,
   MontserratAlternates_700Bold,
- } from '@expo-google-fonts/montserrat-alternates';
+} from '@expo-google-fonts/montserrat-alternates';
 
 
 
@@ -47,9 +48,9 @@ export default function App() {
     //Conatainer
     //Stack Navigation
     //Stack Secreen
-    
+
     <NavigationContainer>
-      <StatusBar/>
+      <StatusBar />
       <Stack.Navigator>
 
         <Stack.Screen
@@ -93,54 +94,54 @@ export default function App() {
         <Stack.Screen
           name='UserProfile'
           component={UserProfile}
-          options={{title: 'UserProfile'}}
+          options={{ title: 'UserProfile' }}
         />
 
         <Stack.Screen
-          name='ConsultationLocation'
-          component={ConsultationLocation}
-          options={{title: 'ConsultaionLocation'}}
+          name='ClinicLocation'
+          component={ClinicLocation}
+          options={{ title: 'ClinicLocation' }}
         />
 
         <Stack.Screen
           name='HomeMedic'
           component={HomeMedic}
-          options={{title: 'HomeMedic'}}
+          options={{ title: 'HomeMedic' }}
         />
 
         <Stack.Screen
           name='MedicalRecord'
           component={MedicalRecord}
-          options={{title: 'MedicalRecord'}}
+          options={{ title: 'MedicalRecord' }}
         />
 
         <Stack.Screen
           name='HomePatient'
           component={HomePatient}
-          options={{title: 'HomePatient'}}
+          options={{ title: 'HomePatient' }}
         />
 
         <Stack.Screen
           name='ClinicSelect'
           component={ClinicSelect}
-          options={{title: 'ClinicSelect'}}
+          options={{ title: 'ClinicSelect' }}
         />
         <Stack.Screen
           name='MedicSelect'
           component={MedicSelect}
-          options={{title: 'MedicSelect'}}
+          options={{ title: 'MedicSelect' }}
         />
 
         <Stack.Screen
           name='DateSelect'
           component={DateSelect}
-          options={{title: 'DateSelect'}}
+          options={{ title: 'DateSelect' }}
         />
 
         <Stack.Screen
           name='MedicRecord'
           component={MedicRecord}
-          options={{title: 'MedicRecord'}}
+          options={{ title: 'MedicRecord' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

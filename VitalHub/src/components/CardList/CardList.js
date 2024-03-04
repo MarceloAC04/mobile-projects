@@ -23,7 +23,7 @@ export const CardList = ({ status, cardsData }) => {
     )
 }
 
-export const CardMedicList = ({ status, cardsData }) => {
+export const CardMedicList = ({ status, navi, cardsData }) => {
     return (
         <ListCard
             data={cardsData}
@@ -32,6 +32,7 @@ export const CardMedicList = ({ status, cardsData }) => {
                 <AppointmentMedicCard
                     id={item.id}
                     situation={item.situation}
+                    navi={navi}
                     img={item.img}
                     name={item.name}
                     age={item.age}
@@ -41,7 +42,8 @@ export const CardMedicList = ({ status, cardsData }) => {
                     crm={item.crm}
                     specialty={item.specialty}
                 />
-            )}
+            )
+            }
         />
     )
 }

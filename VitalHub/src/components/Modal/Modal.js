@@ -184,7 +184,7 @@ export const ModalLocalAppointment = ({ animation, transparent, onPressConfirm, 
                     <SubTitle>{specialty}   <SubTitle>{crm}</SubTitle></SubTitle>
                     <ButtonEnter
                         onPress={onPressConfirm}
-                        placeholder={'Confirmar'}
+                        placeholder={'Ver local da consulta'}
                     />
                     <ButtonSecondary
                         onPress={onPressCancel}

@@ -38,7 +38,7 @@ export const CalendarSchedule = ({ selected = '', selectedDateDay = null }) => {
     <ScheduleCalendar
       hideArrows={true}
       monthFormat='MMMM yyyy'
-      minDate={currentDate.dateString}
+      minDate={currentDate.toUTCString()}
       maxDate={endingDate.dateString}
       dayComponent={({ date, state }) => {
         return (
@@ -58,9 +58,15 @@ export const CalendarSchedule = ({ selected = '', selectedDateDay = null }) => {
       theme={{
         monthTextColor: '#4E4B59',
         textMonthFontFamily: 'MontserratAlternates_600SemiBold',
-        textMonthFontSize: 22
+        textMonthFontSize: 22,
+        'stylesheet.calendar.header': {
+          week: {
+            marginTop: 5,
+            flexDirection: 'row',
+            justifyContent: 'space-around'
+          }
+        }
       }}
-
     />
   )
 }

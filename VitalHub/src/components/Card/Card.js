@@ -3,7 +3,8 @@ import {
     RealizedTimeContainer,
     ScheduleClinicContainer,
     ScheduleContainer,
-    ScheduleTime } from "../ScheduleCard/Styles";
+    ScheduleTime 
+} from "../ScheduleCard/Styles";
 import {
     CardClinicContainer,
     CardClinicContent,
@@ -12,7 +13,8 @@ import {
     CardLinkText,
     CardMedicContainer,
     CardMedicSelectContainer,
-    RealizedCardLinkText } from "./Style";
+    RealizedCardLinkText 
+} from "./Style";
 import { SubTitleCard, SubTitleCardAge, SubTitleCardScore, SubTitleClinicCard, SubTitleMedicCard } from "../SubTitle/Styles";
 import { ModalAppointment, ModalLocalAppointment } from "../Modal/Modal";
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
@@ -20,7 +22,7 @@ import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
 import { TitleCard } from "../Title/Styles";
 import { useState } from "react";
 
-export const AppointmentCard = ({ id, img, name, age, query, onPressModal, schedule, email, situation }) => {
+export const AppointmentCard = ({ id, img, name, age, query, schedule, email, situation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <CardContainer>
@@ -76,7 +78,7 @@ export const AppointmentCard = ({ id, img, name, age, query, onPressModal, sched
     )
 }
 
-export const AppointmentMedicCard = ({ id, img, name, age, query, crm, specialty, schedule, email, situation }) => {
+export const AppointmentMedicCard = ({ id, img, name, age, navi, query, crm, specialty, schedule, email, situation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [modalLocalVisible, setModalLocalVisible] = useState(false);
     return (
@@ -89,6 +91,10 @@ export const AppointmentMedicCard = ({ id, img, name, age, query, crm, specialty
                     <ModalLocalAppointment
                         visible={modalLocalVisible}
                         onPressCancel={() => setModalLocalVisible(false)}
+                        onPressConfirm={() => {
+                            setModalLocalVisible(false)
+                            navi.navigate("ClinicLocation")
+                        }}
                         animation={'fade'}
                         transparent={true}
                         id={id}

@@ -9,7 +9,7 @@ import { CardLinkText } from "../../components/Card/Style";
 import { Title } from "../../components/Title/Styles";
 
 
-export const MedicRecord = () => {
+export const MedicRecord = ({ navigation }) => {
     return (
         <ContainerScrollView>
             <Container>
@@ -33,7 +33,7 @@ export const MedicRecord = () => {
                     placeholder={`Medicamento: Advil \nDosagem: 50 mg \nFrequência: 3 vezes ao dia \nDuração: 3 dias`}
                 />
 
-                <GenericPrescriptionInput 
+                <GenericPrescriptionInput
                     textLabel={'Prescrição médica'}
                     placeholder={`Nenhuma foto informada`}
                 />
@@ -47,6 +47,7 @@ export const MedicRecord = () => {
                     placeholder={`Resultado do exame de sangue : \ntudo normal`}
                 />
                 <ButtonSecondary
+                    onPress={() => navigation.navigate('HomePatient')}
                     placeholder={'voltar'}
                 />
             </Container>

@@ -7,7 +7,7 @@ import { SubTitle } from "../../components/SubTitle/Styles";
 import { Title } from "../../components/Title/Styles";
 
 
-export const UserProfile = () => {
+export const UserProfile = ({ navigation }) => {
     return (
         <ContainerScrollView>
             <Container>
@@ -50,6 +50,7 @@ export const UserProfile = () => {
                 />
 
                 <ButtonGrey
+                    onPress={() => navigation.navigate('Login')}
                     placeholder={'Sair do app'}
                 />
             </Container>

@@ -47,6 +47,7 @@ export const HomePatient = ({ navigation }) => {
             <CardMedicList
                 status={statusLista}
                 cardsData={cardsMedic}
+                navi={navigation}
             />
 
             <ScheduleAppointmentButton

@@ -16,6 +16,6 @@ export const ContainerDateDay = styled.View`
 
 export const DateDayText = styled.Text`
     color: ${props => props.isSelected ? '#FBFBFB' : props.isDisabled ? '#ACABB7' : '#5F5C6B'};
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Quicksand_600SemiBold';
 `;

@@ -3,7 +3,7 @@ import {
     RealizedTimeContainer,
     ScheduleClinicContainer,
     ScheduleContainer,
-    ScheduleTime 
+    ScheduleTime
 } from "../ScheduleCard/Styles";
 import {
     CardClinicContainer,
@@ -13,7 +13,7 @@ import {
     CardLinkText,
     CardMedicContainer,
     CardMedicSelectContainer,
-    RealizedCardLinkText 
+    RealizedCardLinkText
 } from "./Style";
 import { SubTitleCard, SubTitleCardAge, SubTitleCardScore, SubTitleClinicCard, SubTitleMedicCard } from "../SubTitle/Styles";
 import { ModalAppointment, ModalLocalAppointment } from "../Modal/Modal";
@@ -22,7 +22,7 @@ import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
 import { TitleCard } from "../Title/Styles";
 import { useState } from "react";
 
-export const AppointmentCard = ({ id, img, name, age, query, schedule, email, situation }) => {
+export const AppointmentCard = ({ id, img, name, navi, age, query, schedule, email, situation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <CardContainer>
@@ -45,7 +45,7 @@ export const AppointmentCard = ({ id, img, name, age, query, schedule, email, si
                     <CardLinkText onPress={() => setModalVisible(true)}> Cancelar </CardLinkText>
                     <ModalAppointment
                         visible={modalVisible}
-                        onPress={() => setModalVisible(false)}
+                        onPressCancel={() => setModalVisible(false)}
                         animation={'fade'}
                         transparent={true}
                         id={id}
@@ -62,7 +62,11 @@ export const AppointmentCard = ({ id, img, name, age, query, schedule, email, si
                     <RealizedCardLinkText onPress={() => setModalVisible(true)}>Ver Prontuário</RealizedCardLinkText>
                     <ModalAppointment
                         visible={modalVisible}
-                        onPress={() => setModalVisible(false)}
+                        onPressCancel={() => setModalVisible(false)}
+                        onPressConfirm={() => {
+                            setModalVisible(false)
+                            navi.navigate("MedicalRecord", { userImg: img, userName: name, userAge: age, userEmail: email })
+                        }}
                         animation={'fade'}
                         transparent={true}
                         id={id}

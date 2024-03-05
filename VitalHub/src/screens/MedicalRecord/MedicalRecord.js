@@ -8,16 +8,17 @@ import { Title } from "../../components/Title/Styles";
 import { useState } from "react";
 
 
-export const MedicalRecord = ({navigation}) => {
+export const MedicalRecord = ({navigation, route}) => {
     const [isEditing, setIsEditing] = useState(false);
+    const {userImg, userName, userAge, userEmail} = route.params;
     return (
         <ContainerScrollView>
             <Container>
 
-                <UserProfilePhoto source={require('../../assets/foto-de-perfil.png')} />
-                <Title>Richard Kosta</Title>
+                <UserProfilePhoto source={userImg} />
+                <Title>{userName}</Title>
 
-                <SubTitle>22 Anos    <SubTitle>richard.kosta@gmail.com</SubTitle></SubTitle>
+                <SubTitle>{userAge}    <SubTitle>{userEmail}</SubTitle></SubTitle>
                 {
                     !isEditing ? (
                         <>

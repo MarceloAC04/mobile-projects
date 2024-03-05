@@ -2,7 +2,7 @@ import { AppointmentCard, AppointmentMedicCard, ClinicSelectCard, MedicSelectCar
 import { ListCard } from "./Styles";
 import { useState } from "react";
 
-export const CardList = ({ status, cardsData }) => {
+export const CardList = ({ status, navi, cardsData }) => {
     return (
         <ListCard
             data={cardsData}
@@ -11,6 +11,7 @@ export const CardList = ({ status, cardsData }) => {
                 <AppointmentCard
                     id={item.id}
                     situation={item.situation}
+                    navi={navi}
                     img={item.img}
                     name={item.name}
                     age={item.age}

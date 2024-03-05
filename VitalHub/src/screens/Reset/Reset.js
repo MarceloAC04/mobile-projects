@@ -10,7 +10,6 @@ import { AntDesign } from '@expo/vector-icons';
 export const Reset = ({navigation}) => {
     return (
         <Container>
-
             <ContainerIcons>
                 <AntDesign onPress={() => navigation.navigate('Login')} name="arrowleft" size={30} color="#49B3BA" />
             </ContainerIcons>

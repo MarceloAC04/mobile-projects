@@ -5,13 +5,28 @@ import { ButtonEnter } from "../../components/Button/Button";
 import { Title } from "../../components/Title/Styles";
 
 const medicCards = [
-    { id: 1, img: require('../../assets/foto-de-perfil-medico-2.png'), medicName: 'Dra Alessandra', speciality: 'Demartologa, Esteticista' },
-    { id: 2, img: require('../../assets/foto-de-perfil-medico-3.png'), medicName: 'Dr Kumushiro', speciality: 'Cirurgião, Cardiologista' },
-    { id: 3, img: require('../../assets/foto-de-perfil-medico-4.png'), medicName: 'Dr Rodrigo Santos', speciality: 'Clínico, Pediatra' },
+    {
+        id: 1,
+        img: require('../../assets/foto-de-perfil-medico-2.png'),
+        medicName: 'Dra Alessandra',
+        speciality: 'Demartologa, Esteticista'
+    },
+    {
+        id: 2,
+        img: require('../../assets/foto-de-perfil-medico-3.png'),
+        medicName: 'Dr Kumushiro',
+        speciality: 'Cirurgião, Cardiologista'
+    },
+    {
+        id: 3,
+        img: require('../../assets/foto-de-perfil-medico-4.png'),
+        medicName: 'Dr Rodrigo Santos',
+        speciality: 'Clínico, Pediatra'
+    },
 ]
 
 
-export const MedicSelect = ({navigation}) => {
+export const MedicSelect = ({ navigation }) => {
     return (
         <Container>
             <Title>Selecionar Médico</Title>
@@ -19,13 +34,13 @@ export const MedicSelect = ({navigation}) => {
             <MedicSelectCardList
                 cardsData={medicCards}
             />
-            
+
             <ButtonEnter
                 placeholder={'confirmar'}
                 onPress={() => navigation.navigate("DateSelect")}
             />
 
-            <ButtonSecondary 
+            <ButtonSecondary
                 onPress={() => navigation.navigate("HomePatient")}
             />
         </Container>

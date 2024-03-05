@@ -22,7 +22,7 @@ import { Modal } from "react-native";
 import { useState } from "react";
 
 
-export const ModalAppointment = ({ id, animation, transparent, visible, onPress, img, name, age, email, situation, ...rest }) => {
+export const ModalAppointment = ({ id, animation, transparent, visible, onPressCancel, onPressConfirm, img, name, age, email, situation, ...rest }) => {
     return (
         <Modal {...rest}
             animationType={animation}
@@ -37,10 +37,11 @@ export const ModalAppointment = ({ id, animation, transparent, visible, onPress,
                             <SubTitle>Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?</SubTitle>
                         </SubTitleContainerModal>
                         <ButtonEnter
+                            onPress={onPressConfirm}
                             placeholder={'Confirmar'}
                         />
                         <ButtonSecondary
-                            onPress={onPress}
+                            onPress={onPressCancel}
                         />
                     </ModalContainer>
 
@@ -52,10 +53,11 @@ export const ModalAppointment = ({ id, animation, transparent, visible, onPress,
                         <Title>{name}</Title>
                         <SubTitle>{age}   <SubTitle>{email}</SubTitle></SubTitle>
                         <ButtonEnter
+                            onPress={onPressConfirm}
                             placeholder={'Confirmar'}
                         />
                         <ButtonSecondary
-                            onPress={onPress}
+                            onPress={onPressCancel}
                         />
                     </ModalMedicalRecordContainer>
                 </ModalMedicalRecordView>

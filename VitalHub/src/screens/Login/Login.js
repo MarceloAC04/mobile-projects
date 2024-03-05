@@ -7,6 +7,9 @@ import { Input } from "../../components/Input/Styles";
 import { Logo } from "../../components/Logo/Styles";
 
 export const Login = ({navigation}) => {
+     function Login() {
+        navigation.navigate("Main")
+    }
     return (
         <Container>
 
@@ -21,8 +24,9 @@ export const Login = ({navigation}) => {
 
             <LinkMedium onPress={() =>navigation.navigate("Reset")}>Esqueceu sua senha?</LinkMedium>
 
-            <ButtonEnter 
-            placeholder={'Entrar'}
+            <ButtonEnter
+                onPress={() => Login()} 
+                placeholder={'Entrar'}
             />
 
             <ButtonGoogle 

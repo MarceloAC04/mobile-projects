@@ -39,7 +39,7 @@ const cardsPatient = [
     }
 ]
 
-export const HomeMedic = () => {
+export const HomeMedic = ({navigation}) => {
     const [statusLista, setStatusLista] = useState("pendente");
     return (
         <Container>
@@ -70,6 +70,7 @@ export const HomeMedic = () => {
             <CardList
                 status={statusLista}
                 cardsData={cardsPatient}
+                navi={navigation}
             />
         </Container>
     )

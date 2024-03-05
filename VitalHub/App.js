@@ -26,8 +26,7 @@ import {
   MontserratAlternates_500Medium,
   MontserratAlternates_700Bold,
 } from '@expo-google-fonts/montserrat-alternates';
-
-
+import { Main } from './src/screens/Main/Main';
 
 export default function App() {
   const [fontsLoaded, fontsError] = useFonts({
@@ -54,18 +53,24 @@ export default function App() {
       <Stack.Navigator>
 
         <Stack.Screen
+          name='Login'
+          component={Login}
+          options={{ title: 'Login' }}
+        />
+        
+        <Stack.Screen
+          name='Main'
+          component={Main}
+        />
+
+        {/* <Stack.Screen
           //Nome da tela
           name='Navegacao'
           //Componente que sera chamado
           component={Navegation}
           options={{ title: 'Navegacao' }}
-        />
+        /> */}
 
-        <Stack.Screen
-          name='Login'
-          component={Login}
-          options={{ title: 'Login' }}
-        />
 
         <Stack.Screen
           name='Reset'

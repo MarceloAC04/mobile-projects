@@ -11,7 +11,7 @@ export const Reset = ({navigation}) => {
     return (
         <Container>
             <ContainerIcons>
-                <AntDesign onPress={() => navigation.navigate('Login')} name="arrowleft" size={30} color="#49B3BA" />
+                <AntDesign onPress={() => navigation.replace('Login')} name="arrowleft" size={30} color="#49B3BA" />
             </ContainerIcons>
 
             <Logo source={require('../../assets/VitalHub-logo2.png')} />
@@ -25,7 +25,7 @@ export const Reset = ({navigation}) => {
             <Input placeholder={'Usuário ou E-mail'} />
 
             <ButtonEnter
-                onPress={() => navigation.navigate('EmailCode')} 
+                onPress={() => navigation.replace('EmailCode')} 
                 placeholder={'continuar'}
             />
         </Container>

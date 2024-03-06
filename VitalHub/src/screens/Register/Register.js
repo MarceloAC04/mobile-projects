@@ -23,11 +23,11 @@ export const Register = ({ navigation }) => {
 
             <ButtonEnter
                 placeholder={'cadastrar'}
-                onPress={() => navigation.navigate('EmailCode')}
+                onPress={() => navigation.replace('Login')}
             />
 
             <ButtonSecondary
-                onPress={() => navigation.navigate('Login')}
+                onPress={() => navigation.replace('Login')}
             />
         </Container>
     )

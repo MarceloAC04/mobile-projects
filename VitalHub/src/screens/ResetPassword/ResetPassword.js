@@ -11,7 +11,7 @@ export const ResetPassword = ({navigation}) => {
     return (
         <Container>
             <ContainerIcons>
-                <AntDesign onPress={() => navigation.navigate('Login')} name="closecircle" size={30} color="#49B3BA" />
+                <AntDesign onPress={() => navigation.replace('Login')} name="closecircle" size={30} color="#49B3BA" />
             </ContainerIcons>
             <Logo source={require('../../assets/VitalHub-logo2.png')} />
 
@@ -24,7 +24,7 @@ export const ResetPassword = ({navigation}) => {
             <Input placeholder={'Confirme nova senha'} secureTextEntry />
 
             <ButtonEnter
-                onPress={() => navigation.navigate('Login')}
+                onPress={() => navigation.replace('Login')}
                 placeholder={'confirmar nova senha'}
             />
         </Container>

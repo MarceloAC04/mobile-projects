@@ -21,12 +21,12 @@ export const ClinicSelect = ({ navigation }) => {
             />
 
             <ButtonEnter
-                onPress={() => navigation.navigate("MedicSelect")}
+                onPress={() => navigation.replace("MedicSelect")}
                 placeholder={'confirmar'}
             />
 
             <ButtonSecondary
-                onPress={() => navigation.navigate("HomePatient")}
+                onPress={() => navigation.replace("HomePatient")}
             />
         </Container>
     )

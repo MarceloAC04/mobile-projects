@@ -50,7 +50,7 @@ export const UserProfile = ({ navigation }) => {
                 />
 
                 <ButtonGrey
-                    onPress={() => navigation.navigate('Login')}
+                    onPress={() => navigation.replace('Login')}
                     placeholder={'Sair do app'}
                 />
             </Container>

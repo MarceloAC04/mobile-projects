@@ -37,11 +37,11 @@ export const MedicSelect = ({ navigation }) => {
 
             <ButtonEnter
                 placeholder={'confirmar'}
-                onPress={() => navigation.navigate("DateSelect")}
+                onPress={() => navigation.replace("DateSelect")}
             />
 
             <ButtonSecondary
-                onPress={() => navigation.navigate("HomePatient")}
+                onPress={() => navigation.replace("HomePatient")}
             />
         </Container>
     )

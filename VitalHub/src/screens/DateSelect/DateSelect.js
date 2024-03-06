@@ -36,7 +36,7 @@ export const DateSelect = ({navigation}) => {
                 animation={'fade'}
                 onPressConfirm={() => {
                     setModalVisible(false)
-                    navigation.navigate("HomePatient")
+                    navigation.replace("HomePatient")
                 }}
                 onPressCancel={() => setModalVisible(false)}
                 date={select}
@@ -44,7 +44,7 @@ export const DateSelect = ({navigation}) => {
             />
 
             <ButtonSecondary
-                onPress={() => navigation.navigate("HomePatient")}
+                onPress={() => navigation.replace("HomePatient")}
             />
         </Container>
     )

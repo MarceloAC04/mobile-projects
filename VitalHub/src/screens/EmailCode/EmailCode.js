@@ -12,7 +12,7 @@ export const EmailCode = ({navigation}) => {
         <Container>
 
             <ContainerIcons>
-                <AntDesign onPress={() => navigation.navigate('Reset')} name="closecircle" size={30} color="#49B3BA" />
+                <AntDesign onPress={() => navigation.replace('Reset')} name="closecircle" size={30} color="#49B3BA" />
             </ContainerIcons>
 
             <Logo source={require('../../assets/VitalHub-logo2.png')} />
@@ -33,7 +33,7 @@ export const EmailCode = ({navigation}) => {
             </EmailCodeInputContainer>
 
             <ButtonEnter 
-                onPress={() => navigation.navigate('ResetPassword')}
+                onPress={() => navigation.replace('ResetPassword')}
                 placeholder={'ENTRAR'}
             />
 

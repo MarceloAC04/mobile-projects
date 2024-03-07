@@ -26,7 +26,7 @@ export const ClinicSelect = ({ navigation }) => {
             />
 
             <ButtonSecondary
-                onPress={() => navigation.replace("HomePatient")}
+                onPress={() => navigation.replace("Home")}
             />
         </Container>
     )

@@ -4,10 +4,10 @@ import { SubTitle } from "../../components/SubTitle/Styles";
 import { TitleHeader } from "../../components/Title/Styles";
 import { FontAwesome } from '@expo/vector-icons';
 
-export const Header = ({userPhoto, userName}) => {
+export const Header = ({userPhoto, userName, navi}) => {
     return (
         <HeaderContainer>
-            <HeaderUserProfile>
+            <HeaderUserProfile onPress={navi}>
                 <UserProfilePhotoHeader source={userPhoto} />
                 <HeaderUserProfileText>
                     <SubTitle>Bem vindo</SubTitle>

@@ -20,7 +20,7 @@ export const HeaderContainer = styled(LinearGradient).attrs({
     box-shadow: 0px 4px 15px #00000014;
 `
 
-export const HeaderUserProfile = styled.View`
+export const HeaderUserProfile = styled.TouchableOpacity`
     flex-direction: row;
     width: 60%;
     gap: 10px;

@@ -34,7 +34,7 @@ export const ClinicLocation = ({navigation}) => {
 
                 <ButtonSecondary
                     placeholder={'voltar'}
-                    onPress={() => navigation.replace('HomePatient')}
+                    onPress={() => navigation.replace('Home')}
                 />
 
             </Container>

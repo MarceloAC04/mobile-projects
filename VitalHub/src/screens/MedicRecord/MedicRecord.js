@@ -7,7 +7,7 @@ import { MedicRecordButton } from "../../components/Button/Button";
 import { SubTitle } from "../../components/SubTitle/Styles";
 import { CardLinkText } from "../../components/Card/Style";
 import { Title } from "../../components/Title/Styles";
-
+import { Line } from "./Styles";
 
 export const MedicRecord = ({ navigation }) => {
     return (
@@ -43,11 +43,13 @@ export const MedicRecord = ({ navigation }) => {
                     <CardLinkText> Cancelar </CardLinkText>
                 </GenericProfileInputContainerRow>
 
+                <Line/>
+
                 <GenericTextArea
                     placeholder={`Resultado do exame de sangue : \ntudo normal`}
                 />
                 <ButtonSecondary
-                    onPress={() => navigation.navigate('HomePatient')}
+                    onPress={() => navigation.replace('Main')}
                     placeholder={'voltar'}
                 />
             </Container>

@@ -70,7 +70,7 @@ export const MedicalRecord = ({navigation, route}) => {
                 ) : null}
 
                 <ButtonSecondary
-                    onPress={() => navigation.navigate('HomeMedic')}
+                    onPress={() => navigation.navigate('Main')}
                 />
 
             </Container>

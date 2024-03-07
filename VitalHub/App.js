@@ -27,6 +27,7 @@ import {
   MontserratAlternates_700Bold,
 } from '@expo-google-fonts/montserrat-alternates';
 import { Main } from './src/screens/Main/Main';
+import { Home } from './src/screens/Home/Home';
 
 export default function App() {
   const [fontsLoaded, fontsError] = useFonts({
@@ -50,7 +51,9 @@ export default function App() {
 
     <NavigationContainer>
       <StatusBar />
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{headerShown : false}}
+      >
 
         <Stack.Screen
           name='Login'
@@ -71,6 +74,11 @@ export default function App() {
           options={{ title: 'Navegacao' }}
         /> */}
 
+        <Stack.Screen
+          name='Home'
+          component={Home}
+          options={{ title: 'Home' }}
+        />
 
         <Stack.Screen
           name='Reset'
@@ -108,22 +116,11 @@ export default function App() {
           options={{ title: 'ClinicLocation' }}
         />
 
-        <Stack.Screen
-          name='HomeMedic'
-          component={HomeMedic}
-          options={{ title: 'HomeMedic' }}
-        />
 
         <Stack.Screen
           name='MedicalRecord'
           component={MedicalRecord}
           options={{ title: 'MedicalRecord' }}
-        />
-
-        <Stack.Screen
-          name='HomePatient'
-          component={HomePatient}
-          options={{ title: 'HomePatient' }}
         />
 
         <Stack.Screen

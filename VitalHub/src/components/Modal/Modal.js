@@ -54,7 +54,7 @@ export const ModalAppointment = ({ id, animation, transparent, visible, onPressC
                         <SubTitle>{age}   <SubTitle>{email}</SubTitle></SubTitle>
                         <ButtonEnter
                             onPress={onPressConfirm}
-                            placeholder={'Confirmar'}
+                            placeholder={'Ver Prontuário'}
                         />
                         <ButtonSecondary
                             onPress={onPressCancel}

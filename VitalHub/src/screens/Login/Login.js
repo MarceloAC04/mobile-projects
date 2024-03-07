@@ -7,16 +7,16 @@ import { Input } from "../../components/Input/Styles";
 import { Logo } from "../../components/Logo/Styles";
 import { useState } from "react";
 
-export const Login = ({ navigation , checkHome}) => {
+export const Login = ({ navigation, checkLogin}) => {
     const [userEmail, setUserEmail ] = useState('doctor@email.com')
 
     function Login() {
-        if (userEmail === 'doctor@email.com') {
-            checkHome ='HomeMedic'
+        if (userEmail === 'doctor@email.com' ) {
+             checkLogin = 'doctor'
         } else {
-            checkHome = 'HomePatient'
+            checkLogin = 'patient'
         }
-        navigation.replace("Main", { check: checkHome })
+        navigation.replace("Main", {check : checkLogin})
     }
     return (
         <Container>

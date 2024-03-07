@@ -2,18 +2,17 @@
 import { ContentIcon, TextIcon } from './Styles'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { UserProfile } from "../UserProfile/UserProfile";
-import { HomeMedic } from "../HomeMedic/HomeMedic";
-import { HomePatient } from '../HomePatient/HomePatient';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'
+import { Home } from '../Home/Home';
 
 const BottomTab = createBottomTabNavigator();
 
 export const Main = ({route}) => {
-    const {check} = route.params;
+    const {check} = route.params
     return (
         <BottomTab.Navigator
             //definir a rota inicial
-            initialRouteName={{check}}
+            initialRouteName={'Home'}
 
             screenOptions={({ route }) => ({
                 tabBarStyle: { backgroundColor: '#FFFFFF', height: 80, paddingTop: 10 },
@@ -52,11 +51,8 @@ export const Main = ({route}) => {
         >
             <BottomTab.Screen
                 name="Home"
-                component={check === 'HomeMedic' ? HomeMedic : HomePatient }
+                component={Home}
             />
-
-
-
             <BottomTab.Screen
                 name="UserProfile"
                 component={UserProfile}

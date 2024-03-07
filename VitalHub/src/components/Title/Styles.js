@@ -17,3 +17,6 @@ export const TitleCard = styled(Title)`
     color: #33303E;
     font-size: 16px;
 `
+export const TitleSelectScreen = styled(Title)`
+    margin-top: 35px;
+`

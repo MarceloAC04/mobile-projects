@@ -4,19 +4,20 @@ import { LinkAccount, LinkMedium } from "../../components/Links/Styles";
 import { Container } from "../../components/Container/Styles";
 import { Title } from "../../components/Title/Styles";
 import { Input } from "../../components/Input/Styles";
+import { global } from "../../services/Global";
 import { Logo } from "../../components/Logo/Styles";
 import { useState } from "react";
 
-export const Login = ({ navigation, checkLogin}) => {
-    const [userEmail, setUserEmail ] = useState('doctor@email.com')
+export const Login = ({ navigation }) => {
+    const [userEmail, setUserEmail] = useState('doctor@email.com')
 
     function Login() {
-        if (userEmail === 'doctor@email.com' ) {
-             checkLogin = 'doctor'
+        if (userEmail === 'doctor@email.com') {
+            global.role = 'doctor'
         } else {
-            checkLogin = 'patient'
+            global.role = 'patient'
         }
-        navigation.replace("Main", {check : checkLogin})
+        navigation.replace("Main")
     }
     return (
         <Container>

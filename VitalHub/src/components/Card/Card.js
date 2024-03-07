@@ -52,7 +52,7 @@ export const AppointmentCard = ({ id, img, name, navi, age, query, schedule, ema
                     <ModalAppointment
                         visible={modalVisible}
                         onPressCancel={() => setModalVisible(false)}
-                        onPressConfirm={() => handleClose('HomeMedic')}
+                        onPressConfirm={() => handleClose('Main')}
                         animation={'fade'}
                         transparent={true}
                         id={id}
@@ -131,7 +131,8 @@ export const AppointmentMedicCard = ({ id, img, name, age, navi, query, crm, spe
                         <CardLinkText onPress={() => setModalVisible(true)}> Cancelar </CardLinkText>
                         <ModalAppointment
                             visible={modalVisible}
-                            onPress={() => setModalVisible(false)}
+                            onPressCancel={() => setModalVisible(false)}
+                            onPressConfirm={() => handleClose('Main')}
                             animation={'fade'}
                             transparent={true}
                             id={id}

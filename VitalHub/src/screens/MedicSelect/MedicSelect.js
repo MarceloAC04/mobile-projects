@@ -2,7 +2,7 @@ import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButto
 import { MedicSelectCardList } from "../../components/CardList/CardList";
 import { Container } from "../../components/Container/Styles";
 import { ButtonEnter } from "../../components/Button/Button";
-import { Title } from "../../components/Title/Styles";
+import {TitleSelectScreen } from "../../components/Title/Styles";
 
 const medicCards = [
     {
@@ -29,7 +29,7 @@ const medicCards = [
 export const MedicSelect = ({ navigation }) => {
     return (
         <Container>
-            <Title>Selecionar Médico</Title>
+            <TitleSelectScreen>Selecionar Médico</TitleSelectScreen>
 
             <MedicSelectCardList
                 cardsData={medicCards}
@@ -41,7 +41,7 @@ export const MedicSelect = ({ navigation }) => {
             />
 
             <ButtonSecondary
-                onPress={() => navigation.replace("HomePatient")}
+                onPress={() => navigation.replace("Main")}
             />
         </Container>
     )

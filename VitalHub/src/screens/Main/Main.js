@@ -8,7 +8,6 @@ import { Home } from '../Home/Home';
 const BottomTab = createBottomTabNavigator();
 
 export const Main = ({route}) => {
-    const {check} = route.params
     return (
         <BottomTab.Navigator
             //definir a rota inicial

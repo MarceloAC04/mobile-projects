@@ -7,12 +7,10 @@ import { ClinicSelect } from './src/screens/ClinicSelect/ClinicSelect';
 import { MedicSelect } from './src/screens/MedicSelect/MedicSelect';
 import { MedicRecord } from './src/screens/MedicRecord/MedicRecord';
 import { UserProfile } from './src/screens/UserProfile/UserProfile';
-import { HomePatient } from './src/screens/HomePatient/HomePatient'
 import { DateSelect } from './src/screens/DateSelect/DateSelect';
 import { Navegation } from './src/screens/Navegation/Navegation';
 import { NavigationContainer } from '@react-navigation/native';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
-import { HomeMedic } from './src/screens/HomeMedic/HomeMedic';
 import { Register } from './src/screens/Register/Register';
 import { Login } from './src/screens/Login/Login';
 import { Reset } from './src/screens/Reset/Reset';

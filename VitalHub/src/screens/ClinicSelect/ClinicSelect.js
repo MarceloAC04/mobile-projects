@@ -2,7 +2,8 @@ import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButto
 import { ClinicCardList } from "../../components/CardList/CardList";
 import { Container } from "../../components/Container/Styles";
 import { ButtonEnter } from "../../components/Button/Button";
-import { Title } from "../../components/Title/Styles";
+import { TitleSelectScreen } from "../../components/Title/Styles";
+
 
 const clinicCards = [
     { id: 1, clinicName: 'Clínica Natureh', score: '4,5', city: 'São Paulo', uf: 'SP', days: 'Seg-Sex' },
@@ -14,7 +15,7 @@ const clinicCards = [
 export const ClinicSelect = ({ navigation }) => {
     return (
         <Container>
-            <Title>Selecionar Clínica</Title>
+            <TitleSelectScreen>Selecionar Clínica</TitleSelectScreen>
 
             <ClinicCardList
                 cardsData={clinicCards}
@@ -26,7 +27,7 @@ export const ClinicSelect = ({ navigation }) => {
             />
 
             <ButtonSecondary
-                onPress={() => navigation.replace("Home")}
+                onPress={() => navigation.replace("Main")}
             />
         </Container>
     )

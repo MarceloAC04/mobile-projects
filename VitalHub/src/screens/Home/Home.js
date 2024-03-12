@@ -9,7 +9,6 @@ import { global } from "../../services/Global";
 import { useState } from "react";
 import { StatusBar } from "react-native";
 
-
 const cardsPatient = [
     {
         id: 1, img: require('../../assets/foto-de-perfil-2.png'),

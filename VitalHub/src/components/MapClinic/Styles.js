@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
-export const MapClinic = styled.Image`
+export const MapClinic = styled.View`
     width: 360px;
     height: 320px;
+    justify-content: center;
     margin-bottom: 30px;
+`
+
+export const MapFindingLocationText = styled.View`
+    align-items: center;
+    gap: 4px;
 `

@@ -1,11 +1,12 @@
-import { ActivityIndicator, StyleSheet } from "react-native";
-import { MapClinic, MapFindingLocationText } from "../../components/MapClinic/Styles";
-import { useEffect, useRef, useState } from "react";
-import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { getCurrentPositionAsync, requestForegroundPermissionsAsync } from "expo-location";
-import { SubTitle } from "../SubTitle/Styles";
+import { MapClinic, MapFindingLocationText } from "../../components/MapClinic/Styles";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
-import {mapskey} from '../../services/mapsApiKeys'
+import { ActivityIndicator, StyleSheet } from "react-native";
+import { useEffect, useRef, useState } from "react";
+import { mapskey } from '../../services/mapsApiKeys'
+import { SubTitle } from "../SubTitle/Styles";
+import { ButtonEnter, RouteCancelMapButton, RouteMapButton } from '../Button/Button'
 
 
 export const MapClinicLocation = () => {
@@ -15,6 +16,8 @@ export const MapClinicLocation = () => {
         latitude: -23.600524,
         longitude: -46.661866
     });
+
+    const [routeClinic, setRouteClinic] = useState(false)
 
     async function LocationCapture() {
         const { granted } = await requestForegroundPermissionsAsync()
@@ -30,35 +33,33 @@ export const MapClinicLocation = () => {
 
     async function ReloadViewMap() {
         if (mapsReference.current && initialPosition) {
-          await mapsReference.current.fitToCoordinates(
-            [{ latitude: initialPosition.coords.latitude, longitude: initialPosition.coords.longitude },
-            { latitude: finalPosition.latitude, longitude: finalPosition.longitude }
-            ],
-            {
-              edgePadding: { top: 60, right: 60, bottom: 60, left: 60 },
-              animated: true
-            }
-          )
+            await mapsReference.current.fitToCoordinates(
+                [{ latitude: initialPosition.coords.latitude, longitude: initialPosition.coords.longitude },
+                { latitude: finalPosition.latitude, longitude: finalPosition.longitude }
+                ],
+                {
+                    edgePadding: { top: 60, right: 60, bottom: 60, left: 60 },
+                    animated: true
+                }
+            )
+            setRouteClinic(true);
         }
-      }
+    }
 
     useEffect(() => {
         LocationCapture()
     }, [1000])
 
-    useEffect(() => {
-        ReloadViewMap()
-    }, [initialPosition])
 
     return (
         <MapClinic>
             {
                 initialPosition != null ? (
                     <MapView
-                    ref={mapsReference}
+                        ref={mapsReference}
                         initialRegion={{
-                            latitude: initialPosition.coords.latitude,
-                            longitude: initialPosition.coords.longitude,
+                            latitude: finalPosition.latitude,
+                            longitude: finalPosition.longitude,
                             longitudeDelta: 0.005,
                             latitudeDelta: 0.005
                         }}
@@ -68,40 +69,55 @@ export const MapClinicLocation = () => {
                     >
                         <Marker
                             coordinate={{
-                                latitude: initialPosition.coords.latitude,
-                                longitude: initialPosition.coords.longitude,
-                                longitudeDelta: 0.005,
-                                latitudeDelta: 0.005
-                            }}
-                            title='Posição inicial'
-                            pinColor='#60BFC5'
-                        />
-                        <MapViewDirections
-                            origin={initialPosition.coords}
-                            destination={{
                                 latitude: finalPosition.latitude,
                                 longitude: finalPosition.longitude,
                                 longitudeDelta: 0.005,
                                 latitudeDelta: 0.005
                             }}
-                            apikey={mapskey}
-                            strokeColor='#496BBA'
-                            strokeWidth={5}
-                        />
-                        <Marker
-                            coordinate={{
-                                latitude: finalPosition.latitude,
-                                longitude: finalPosition.longitude,
-                                longitudeDelta: 0.005,
-                                latitudeDelta: 0.005
-                            }}
-                            title='Destino'
+                            title='Clinica'
                             pinColor='#496BBA'
                         />
+                        {
+                            routeClinic ? (
+                                <>
+                                    <Marker
+                                        coordinate={{
+                                            latitude: initialPosition.coords.latitude,
+                                            longitude: initialPosition.coords.longitude,
+                                            longitudeDelta: 0.005,
+                                            latitudeDelta: 0.005
+                                        }}
+                                        title='Posição inicial'
+                                        pinColor='#60BFC5'
+                                    />
+                                    <MapViewDirections
+                                        origin={initialPosition.coords}
+                                        destination={{
+                                            latitude: finalPosition.latitude,
+                                            longitude: finalPosition.longitude,
+                                            longitudeDelta: 0.005,
+                                            latitudeDelta: 0.005
+                                        }}
+                                        apikey={mapskey}
+                                        strokeColor='#496BBA'
+                                        strokeWidth={5}
+                                        optimizeWaypoints={true}
+                                    />
+                                    <RouteCancelMapButton
+                                        onPress={() => setRouteClinic(false)}
+                                    />
+                                </>
+
+                            ) : (
+                                <RouteMapButton
+                                    onPress={() => ReloadViewMap()}
+                                />
+                            )
+                        }
                     </MapView>
                 ) : (
                     <MapFindingLocationText>
-                        <SubTitle>Procurando sua localização</SubTitle>
+                        <SubTitle>Procurando localização</SubTitle>
                         <ActivityIndicator />
                     </MapFindingLocationText>
                 )

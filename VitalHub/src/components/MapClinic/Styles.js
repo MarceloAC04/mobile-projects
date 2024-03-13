@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MapClinic = styled.View`
-    width: 360px;
+    width: 365px;
     height: 320px;
     justify-content: center;
     margin-bottom: 30px;

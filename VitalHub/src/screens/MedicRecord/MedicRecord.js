@@ -8,8 +8,9 @@ import { SubTitle } from "../../components/SubTitle/Styles";
 import { CardLinkText } from "../../components/Card/Style";
 import { Title } from "../../components/Title/Styles";
 import { Line } from "./Styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AppCamera } from "../../components/Camera/Camera";
+import {Camera, CameraType } from "expo-camera";
 
 export const MedicRecord = ({ navigation }) => {
     const [openCamera, setOpenCamera] = useState(false);
@@ -46,7 +47,10 @@ export const MedicRecord = ({ navigation }) => {
                     <CardLinkText> Cancelar </CardLinkText>
                 </GenericProfileInputContainerRow>
 
-                <AppCamera visibleCamera={openCamera}/>
+                <AppCamera 
+                    visibleCamera={openCamera}
+                    onPressExit={() => setOpenCamera(false)}
+                />
 
                 <Line/>
 

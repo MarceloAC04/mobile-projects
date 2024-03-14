@@ -1,11 +1,12 @@
 import { Camera, CameraType } from 'expo-camera'
-import { ButtonFlip, CameraApp, TextFlip, ViewFlip } from "./Styles"
+import { ButtonCapture, ButtonExit, ButtonFlip, TextFlip, ViewButton, ViewFlip } from "./Styles"
 import { Container } from '../Container/Styles'
-import { useEffect, useState } from 'react'
 import { Modal } from 'react-native'
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
+import { useEffect, useState } from 'react'
 
-export const AppCamera = ({visibleCamera}) => {
-    const [cameraType, setCameraType] = useState(Camera.Constants.Type.back)
+export const AppCamera = ({ visibleCamera, type, onPressType, onPressExit }) => {
+    const [cameraType, setCameraType] = useState(Camera.Constants.Type.front)
 
     useEffect(() => {
         (async () => {
@@ -22,18 +23,23 @@ export const AppCamera = ({visibleCamera}) => {
         >
             <Container>
                 <Camera
-                    cameraType={cameraType}
+                    type={cameraType}
                     style={{ flex: 1, width: '100%', height: '80%' }}
                 >
                     <ViewFlip>
                         <ButtonFlip onPress={() => setCameraType(cameraType == CameraType.front ? CameraType.back : CameraType.front)}>
                             <TextFlip>Trocar</TextFlip>
                         </ButtonFlip>
-                        <ButtonFlip onPress={() => visibleCamera = false }>
-                            <TextFlip>Sair</TextFlip>
-                        </ButtonFlip>
                     </ViewFlip>
                 </Camera>
+                <ViewButton>
+                    <ButtonCapture>
+                        <FontAwesome name='camera' size={23} color={'#fff'} />
+                    </ButtonCapture>
+                    <ButtonExit onPress={onPressExit}>
+                        <Ionicons name="exit-outline" size={27} color="#fff" />
+                    </ButtonExit>
+                </ViewButton>
             </Container>
         </Modal>
     )

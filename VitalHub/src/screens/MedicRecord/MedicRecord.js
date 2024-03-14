@@ -8,8 +8,11 @@ import { SubTitle } from "../../components/SubTitle/Styles";
 import { CardLinkText } from "../../components/Card/Style";
 import { Title } from "../../components/Title/Styles";
 import { Line } from "./Styles";
+import { useState } from "react";
+import { AppCamera } from "../../components/Camera/Camera";
 
 export const MedicRecord = ({ navigation }) => {
+    const [openCamera, setOpenCamera] = useState(false);
     return (
         <ContainerScrollView>
             <Container>
@@ -39,9 +42,11 @@ export const MedicRecord = ({ navigation }) => {
                 />
 
                 <GenericProfileInputContainerRow>
-                    <MedicRecordButton placeholder={'Enviar'} />
+                    <MedicRecordButton onPress={() => setOpenCamera(true)} placeholder={'Enviar'} />
                     <CardLinkText> Cancelar </CardLinkText>
                 </GenericProfileInputContainerRow>
+
+                <AppCamera visibleCamera={openCamera}/>
 
                 <Line/>
 

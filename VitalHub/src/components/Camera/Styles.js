@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const ViewFlip = styled.View`
     flex: 1;
-    background-color: transparent;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    background-color: black;
 `
 export const ViewButton = styled.View`
     background-color: transparent;
     flex-direction: row;
     justify-content: flex-end;
+    width: 90%;
+    gap: 42px;
 `
 
 export const ButtonFlip = styled.TouchableOpacity`
@@ -27,17 +27,8 @@ export const ButtonCapture = styled(ButtonFlip)`
 `
 export const ButtonExit = styled(ButtonCapture)`
     padding: 20px;
-    border-radius: 15px;
-    background-color: #121212;
-    justify-content: center;
-    align-items: center;
 `
 
-export const TextFlip = styled.Text`
-    font-size: 20px;
-    color: #fff;
-    margin-bottom: 20px;
-`
 export const ModalPhotoContainer = styled.View`
     flex: 1;
     align-items: center; 

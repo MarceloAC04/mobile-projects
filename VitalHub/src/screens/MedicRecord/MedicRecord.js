@@ -1,19 +1,20 @@
 import { GenericInput, GenericPrescriptionInput, GenericTextArea } from "../../components/GenericProfileInput/GenericProfileInput";
 import { GenericProfileInputContainerRow } from "../../components/GenericProfileInput/Styles";
+import { ModalCameraPhoto } from "../../components/ModalCameraPhoto/ModalCameraPhoto";
 import { Container, ContainerScrollView } from "../../components/Container/Styles";
 import { ButtonSecondary } from "../../components/SecondaryButton/SecondaryButton";
 import { UserProfilePhoto } from "../../components/UserProfilePhoto/Styles";
 import { MedicRecordButton } from "../../components/Button/Button";
 import { SubTitle } from "../../components/SubTitle/Styles";
+import { AppCamera } from "../../components/Camera/Camera";
 import { CardLinkText } from "../../components/Card/Style";
 import { Title } from "../../components/Title/Styles";
+import { useEffect, useRef, useState } from "react";
+import * as MediaLibrary from 'expo-media-library';
 import { Line } from "./Styles";
-import { useEffect, useState } from "react";
-import { AppCamera } from "../../components/Camera/Camera";
-import {Camera, CameraType } from "expo-camera";
 
 export const MedicRecord = ({ navigation }) => {
-    const [openCamera, setOpenCamera] = useState(false);
+    const [openCamera, setOpenCamera] = useState(false)
     return (
         <ContainerScrollView>
             <Container>
@@ -47,12 +48,12 @@ export const MedicRecord = ({ navigation }) => {
                     <CardLinkText> Cancelar </CardLinkText>
                 </GenericProfileInputContainerRow>
 
-                <AppCamera 
+                <AppCamera
                     visibleCamera={openCamera}
                     onPressExit={() => setOpenCamera(false)}
                 />
 
-                <Line/>
+                <Line />
 
                 <GenericTextArea
                     placeholder={`Resultado do exame de sangue : \ntudo normal`}

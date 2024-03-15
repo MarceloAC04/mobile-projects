@@ -7,7 +7,8 @@ import {
     GenericProfileInputContainerAddress,
     GenericProfileInputEdition,
     GenericProfileTextArea,
-    GenericProfileTextAreaEdition
+    GenericProfileTextAreaEdition,
+    PrescriptionImageContainer
 } from "../../components/GenericProfileInput/Styles";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { LabelText } from "../LabelText/Styles";
@@ -67,14 +68,18 @@ export const GenericEditInput = ({ textLabel, placeholder }) => {
     )
 }
 
-export const GenericPrescriptionInput = ({ textLabel, placeholder }) => {
+export const GenericPrescriptionInput = ({ textLabel, placeholder, img }) => {
     return (
         <GenericProfileInputContainer>
             <LabelText>{textLabel}</LabelText>
+            {img != null ? (
+                <PrescriptionImageContainer source={{uri: img}}/>
+            ) : (
             <GenericPrescriptionContainer>
                 <MaterialCommunityIcons name="alert-box-outline" size={24} color="black" />
                 <GenericPrescriptionImageInput placeholder={placeholder} />
             </GenericPrescriptionContainer>
+                )}
         </GenericProfileInputContainer>
     )
 }

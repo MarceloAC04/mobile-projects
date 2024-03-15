@@ -21,7 +21,6 @@ import { Title } from "../Title/Styles";
 import { Modal } from "react-native";
 import { useState } from "react";
 
-
 export const ModalAppointment = ({ id, animation, transparent, visible, onPressCancel, onPressConfirm, img, name, age, email, situation, ...rest }) => {
     return (
         <Modal {...rest}

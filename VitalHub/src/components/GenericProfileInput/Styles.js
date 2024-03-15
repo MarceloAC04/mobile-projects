@@ -77,3 +77,7 @@ export const GenericPrescriptionImageInput = styled(GenericProfileInput)`
     font-family: 'MontserratAlternates_600SemiBold';
     width: 65%;
 `
+
+export const PrescriptionImageContainer = styled.Image`
+    height: 100px;
+`

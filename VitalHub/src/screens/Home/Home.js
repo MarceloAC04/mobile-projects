@@ -8,6 +8,8 @@ import { Header } from "../../components/Header/Header";
 import { global } from "../../services/Global";
 import { useState } from "react";
 import { StatusBar } from "react-native";
+import * as Notifications from 'expo-notifications'
+
 
 const cardsPatient = [
     {

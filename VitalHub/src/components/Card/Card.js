@@ -22,6 +22,19 @@ import { UserProfilePhotoCard } from "../UserProfilePhoto/Styles";
 import { TitleCard } from "../Title/Styles";
 import { useState } from "react";
 
+import * as Notifications from 'expo-notifications'
+
+Notifications.requestPermissionsAsync();
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowAlert: true,
+
+    shouldPlaySound: true,
+    shouldSetBadge: false,
+  }),
+})
+
 export const AppointmentCard = ({ id, img, name, navi, age, query, schedule, email, situation }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
@@ -29,6 +42,27 @@ export const AppointmentCard = ({ id, img, name, navi, age, query, schedule, ema
         setModalVisible(false)
         navi.navigate(screen, props)
     }
+
+    const handleCallNotification = async () => {
+
+        const {status} = await Notifications.getPermissionsAsync();
+    
+        //verifica se o usuário concedeu permissão para notificações
+        if (status !== "granted") {
+          alert("Você não deixou as notificações ativas.")
+          return;
+        }
+    
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: "Consulta cancelada!",
+            body: "Sua consulta marcada foi cancelada",
+            sound: 'default',
+          },
+          trigger: null
+        })
+      }
+    
 
     return (
         <CardContainer>
@@ -52,7 +86,8 @@ export const AppointmentCard = ({ id, img, name, navi, age, query, schedule, ema
                     <ModalAppointment
                         visible={modalVisible}
                         onPressCancel={() => setModalVisible(false)}
-                        onPressConfirm={() => handleClose('Main')}
+                        onPressConfirm={() => { handleClose('Main') 
+                        handleCallNotification()}}
                         animation={'fade'}
                         transparent={true}
                         id={id}
@@ -97,6 +132,28 @@ export const AppointmentMedicCard = ({ id, img, name, age, navi, query, crm, spe
         setModalLocalVisible(false)
         navi.navigate(screen, props)
     }
+
+    const handleCallNotification = async () => {
+
+        const {status} = await Notifications.getPermissionsAsync();
+    
+        //verifica se o usuário concedeu permissão para notificações
+        if (status !== "granted") {
+          alert("Você não deixou as notificações ativas.")
+          return;
+        }
+    
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: "Consulta cancelada!",
+            body: "Sua consulta marcada foi cancelada",
+            sound: 'default'
+          },
+          trigger: null
+        })
+      }
+
+    
     return (
         <CardMedicContainer onPress={() => { situation === 'pendente' ? setModalLocalVisible(true) : null }}>
             <>
@@ -132,7 +189,8 @@ export const AppointmentMedicCard = ({ id, img, name, age, navi, query, crm, spe
                         <ModalAppointment
                             visible={modalVisible}
                             onPressCancel={() => setModalVisible(false)}
-                            onPressConfirm={() => handleClose('Main')}
+                            onPressConfirm={() => {handleClose('Main') 
+                            handleCallNotification()}}
                             animation={'fade'}
                             transparent={true}
                             id={id}
